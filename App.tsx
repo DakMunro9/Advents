@@ -2,14 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useGeolocation } from './utils/export/exports'
 
-export default function App() {
+//Debug purposes
+import { AsyncRead } from './utils/async-storage/async-methods';
+import { AsyncKeys } from './utils/advent-types';
+import { useEffect, useState } from 'react';
 
+export default function App() {
   useGeolocation()
+
   
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>Hello</Text>
     </View>
   );
 }
