@@ -1,24 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Link } from 'expo-router';
-import Buttonx from './components/common/Button';
-import TextField from './components/common/TextField';
 
-export default function App() {
+export default function Page() {
   return (
     <View style={styles.container}>
-      <Text>This is App.tsx</Text>
+      <Text>This is index.tsx</Text>
       <StatusBar style="auto" />
 
-      <Buttonx 
-        title='Test' 
-        onPress={() => console.log("Button pressed")}
-        
-      />
+      <Link href="/test"> TEST </Link>
 
-      <TextField
-
-      />
     </View>
 
   );
