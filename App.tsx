@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 import Buttonx from './components/common/Button';
 import TextField from './components/common/TextField';
+import { useGeolocation } from './utils/export/exports'
+
+//Debug purposes
 
 export default function App() {
+  useGeolocation()
+
+  
   return (
     <View style={styles.container}>
       <Text>This is App.tsx</Text>
@@ -27,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center',
   },
