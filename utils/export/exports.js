@@ -1,3 +1,3 @@
-import useGeolocation from "../geolocation/Geolocation"
+import useGeolocation from "../geolocation/geolocation"
 
 export {useGeolocation}
