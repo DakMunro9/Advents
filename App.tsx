@@ -8,6 +8,7 @@ import { AsyncRead } from './utils/async-storage/async-methods';
 import { AsyncKeys } from './utils/advent-types';
 import { useEffect, useState } from 'react';
 import { containerStyles } from './utils/styles/components';
+import Budget from './screens/events/budget/budget';
 
 export default function App() {
   useGeolocation()
@@ -15,7 +16,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Location />
+      <Budget />
     </View>
   );
 }
