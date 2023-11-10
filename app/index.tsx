@@ -1,16 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Link } from 'expo-router';
+import Vendors from '../screens/events/vendors/vendors';
 
 export default function Page() {
   return (
     <View style={styles.container}>
-      <Text>This is index.tsx</Text>
-      <StatusBar style="auto" />
-
-      <Link href="/test" asChild>
-         <Button title="Test"/> 
-      </Link>
+      <Vendors />
 
     </View>
 

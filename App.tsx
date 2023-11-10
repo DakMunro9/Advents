@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Buttonx from './components/common/Button';
 import TextField from './components/common/TextField';
 import { useGeolocation } from './utils/export/exports'
+import Vendors from './screens/events/vendors/vendors';
 
 //Debug purposes
 
@@ -12,18 +13,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Text>This is App.tsx</Text>
-      <StatusBar style="auto" />
-
-      <Buttonx 
-        title='Test' 
-        onPress={() => console.log("Button pressed")}
-        
-      />
-
-      <TextField
-
-      />
+      <Vendors />
     </View>
 
   );
