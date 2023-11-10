@@ -5,10 +5,12 @@ import { Link } from 'expo-router';
 export default function Page() {
   return (
     <View style={styles.container}>
-      <Text>This is test.js</Text>
+      <Text>This is index.tsx</Text>
       <StatusBar style="auto" />
 
-      <Link href="/"> BACK TO INDEX </Link>
+      <Link href="/test" asChild>
+         <Button title="Test"/> 
+      </Link>
 
     </View>
 
