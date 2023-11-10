@@ -72,10 +72,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     box: {
-        flex: 1,
+        //flex: 1,
         backgroundColor: 'lightgreen',
-        marginBottom: 10,
-        padding: 10,
       },
 
 });
