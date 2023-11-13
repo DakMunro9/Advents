@@ -12,6 +12,10 @@ export default function Page() {
          <Button title="Test"/> 
       </Link>
 
+      <Link href="/decor" asChild>
+         <Button title="Decor"/> 
+      </Link>
+
     </View>
 
   );
