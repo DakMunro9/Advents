@@ -1,79 +1,120 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
-import { Link } from 'expo-router';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Button} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
-export default function Page() {
-    const handleButtonPress = (buttonText: string) => {
-        // Handle the button press event here
-        console.log(`Button pressed: ${buttonText}`);
-    };
+const SelectionGrid = () => {
+  const [selectedItems, setSelectedItems] = useState([]);
 
-    return (
+  // Function to handle item selection
+  const handleItemSelection = (item: number) => {
+    if (selectedItems.includes(item)) {
+      setSelectedItems(selectedItems.filter((i) => i !== item));
+    } else {
+      setSelectedItems([...selectedItems, item]);
+    }
+  };
 
-        <View style={styles.container}>
-            <View style={styles.row}>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => handleButtonPress("Button 1")}
-                >
-                    <Text style={styles.buttonText}>Button 1</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => handleButtonPress("Button 2")}
-                >
-                    <Text style={styles.buttonText}>Button 2</Text>
-                </TouchableOpacity>
-            </View>
+  // Data for the grid items
+  const gridData = [
+    { id: 1, label: 'Item 1' },
+    { id: 2, label: 'Item 2' },
+    { id: 3, label: 'Item 3' },
+    { id: 4, label: 'Item 4' },
+    { id: 5, label: 'Item 5' },
+    { id: 6, label: 'Item 6' },
+    { id: 7, label: 'Item 7' },
+    { id: 8, label: 'Item 8' },
+    { id: 9, label: 'Item 9' },
+  ];
 
-            <View style={styles.box}>
-                    <Text>This is decor.js</Text>
-                    <StatusBar style="auto" />
+  return (
+    <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}> Select all desired event decor: </Text>
+      </View>
 
-                    <Link href="/" asChild>
-                        <Button title="BACK TO INDEX" />
-                    </Link>
-                </View>
+      <View style={styles.gridContainer}>
+        {gridData.map((item) => (
+          <TouchableOpacity
+            key={item.id}
+            style={[styles.gridItem, selectedItems.includes(item.id) && styles.selectedItem]}
+            onPress={() => handleItemSelection(item.id)}
+          >
+
+            <Text>{item.label}</Text>
+
+          </TouchableOpacity>
+        ))}
+
+        <View style={styles.textContainer}>
+        <Icon name="info" size={30} color="gray" />
+          <Text style={styles.infoText}>These photos and videos appear based on the information entered for your event.</Text>
         </View>
-    );
-}
+
+      </View>
+
+      <View style={styles.buttonContainer}>
+          <Button 
+            title="Continue"
+            color={"black"}
+            onPress={() => alert('Continue button clicked')}
+          />
+        </View>
+      
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
-    button: {
-        backgroundColor: 'blue', // Change the background color as needed
-        padding: 10,
-        borderRadius: 5,
-    },
-    buttonText: {
-        color: 'white', // Change the text color as needed
-        fontSize: 16,
-    },
-
-    
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 20,
-    },
-    column: {
-        flex: 1,
-        backgroundColor: 'lightblue',
-        padding: 10,
-    },
-    box: {
-        //flex: 1,
-        backgroundColor: 'lightgreen',
-      },
-
+  container: {
+    flex: 1,
+    justifyContent: 'space-between', // This places the button at the bottom
+    padding: 20, // Adjust as needed for spacing
+  },
+  textContainer: {
+    flexDirection: 'row',
+    padding: 16, // Adjust the padding as needed
+    //backgroundColor: 'white', // Optional background color for the padding area
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    justifyContent: 'flex-start',
+    //color: 'gray',
+  },
+  infoText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    justifyContent: 'flex-start',
+    color: 'gray',
+  },
+  gridContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1, // Takes up the available space
+    justifyContent: 'center', // Center content vertically
+  },
+  gridItem: {
+    //width: 100,
+    width: '30%',
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#000',
+  },
+  selectedItem: {
+    backgroundColor: 'lightblue', // You can change the style for selected items
+  },
+  buttonContainer: {
+    marginBottom: 10, // Adjust as needed for spacing
+    marginRight: 30,
+    marginLeft: 30,
+    height: 50,
+  },
+  customButton: {
+    height: 50, // Adjust the height as needed
+  },
 });
+
+export default SelectionGrid;
