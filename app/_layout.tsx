@@ -7,9 +7,11 @@ export default function _layout(){
     <Stack
          screenOptions={{
             headerStyle: {
-                backgroundColor: 'black'
+                //backgroundColor: 'black'
+                
             },
-            headerTintColor: 'white'
+            headerTintColor: 'black',
+            headerTitleAlign: 'center',
          }}
          >
             <Stack.Screen name="index" options={{
