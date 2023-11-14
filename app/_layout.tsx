@@ -14,6 +14,9 @@ export default function _layout(){
             <Stack.Screen name="index" options={{
                 title: 'Home'
             }} />
+            <Stack.Screen name="welcome" options={{
+                title: 'Welcome'
+            }} />
             <Stack.Screen name="decor" options={{
                 title: 'Decor'
             }} />

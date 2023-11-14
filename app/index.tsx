@@ -16,6 +16,14 @@ export default function Page() {
          <Button title="Day"/> 
       </Link>
 
+      <Link href="/welcome" asChild>
+         <Button title="Welcome"/> 
+      </Link>
+
+      <Link href="/test" asChild>
+         <Button title="Test"/> 
+      </Link>
+
     </View>
 
   );

@@ -5,7 +5,7 @@ import { Link } from 'expo-router';
 export default function Page() {
   return (
     <View style={styles.container}>
-      <Text>This is test.js</Text>
+      <Text>This is test.tsx</Text>
       <StatusBar style="auto" />
 
       <Link href="/" asChild>
