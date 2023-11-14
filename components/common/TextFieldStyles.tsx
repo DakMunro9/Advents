@@ -1,14 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export const TextFieldStyles = StyleSheet.create({
-  container: {
-    paddingVertical: 10,
-    width: '90%'
-  },
   input: {
-    height: 40,
+    height: 45,
+    flex: 1,
     borderWidth: 1,
-    padding: 10,
     backgroundColor: '#f7f8fa', 
     borderColor: 'grey', 
     borderRadius: 5

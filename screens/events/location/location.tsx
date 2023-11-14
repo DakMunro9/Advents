@@ -15,7 +15,7 @@ export default function Location(){
         <>
             <View style={containerStyles.whiteContainer}>
                 <Text>State</Text>
-                <TextField defaultText="State" currentText={(text) => setState(text)} />
+                <TextField style={{width:50}} defaultText="State" currentText={(text) => setState(text)} />
                 <Text>City</Text>
                 <TextField defaultText="City" currentText={(text) => setCity(text)} />
                 <Text>Zip Code</Text>

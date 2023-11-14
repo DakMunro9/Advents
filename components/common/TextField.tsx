@@ -17,7 +17,7 @@ const TextField: React.FC<TextFieldProps> = (props) => {
     props.currentText(text)
   }
   return (
-    <View style={TextFieldStyles.container}>
+    
       <TextInput
         editable
         style={TextFieldStyles.input}
@@ -27,7 +27,7 @@ const TextField: React.FC<TextFieldProps> = (props) => {
         value={text}
         inputMode={props.keyboard}
       />
-    </View>
+    
   );
 };
 
