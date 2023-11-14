@@ -9,8 +9,10 @@ export const TextFieldStyles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
-    backgroundColor: 'white', 
+    backgroundColor: '#f7f8fa', 
     borderColor: 'grey', 
     borderRadius: 5
-  },
+  }
 });
+
+export const DefaultTextColor = "#a1a1a2"

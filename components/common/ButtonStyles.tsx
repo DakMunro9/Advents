@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const height = Dimensions.get('window').height
 
 export const buttonStyles = StyleSheet.create({
   button: {
@@ -7,7 +9,9 @@ export const buttonStyles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%'
+    width: '90%',
+    height: 50,
+    marginBottom: 15 
   },
   text: {
     color: 'white',

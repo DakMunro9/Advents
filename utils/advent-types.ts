@@ -11,4 +11,24 @@ enum AsyncKeys {
     
 }
 
-export { Measurements, AsyncKeys }
+enum ButtonXTitles {
+    continue = 'Continue',
+    checkout = 'Checkout',
+    pay = 'Pay Now',
+    partiful = 'Connect To Partiful',
+    set = 'Set',
+    save = 'Save',
+    more = 'More Info',
+    signin = 'Sign In',
+    signup = 'Sign Up',
+    bus_signin = 'Business Sign In',
+    bus_signup = 'Business Sign Up',
+    upgrade = 'Upgrade',
+    code = 'Send Code',
+    create = 'Create an Account',
+    list = "List Your Services",
+    promote = "Promote",
+    add_event = 'Add Event'
+}
+
+export { Measurements, AsyncKeys, ButtonXTitles }
