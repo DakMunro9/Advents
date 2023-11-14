@@ -8,12 +8,12 @@ export default function Page() {
       <Text>This is index.tsx</Text>
       <StatusBar style="auto" />
 
-      <Link href="/test" asChild>
-         <Button title="Test"/> 
-      </Link>
-
       <Link href="/decor" asChild>
          <Button title="Decor"/> 
+      </Link>
+
+      <Link href="/day" asChild>
+         <Button title="Day"/> 
       </Link>
 
     </View>

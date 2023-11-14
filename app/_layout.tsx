@@ -1,6 +1,4 @@
-
 import { Stack } from "expo-router";
-
 
 export default function _layout(){
     return (
@@ -8,7 +6,6 @@ export default function _layout(){
          screenOptions={{
             headerStyle: {
                 //backgroundColor: 'black'
-                
             },
             headerTintColor: 'black',
             headerTitleAlign: 'center',
@@ -20,10 +17,9 @@ export default function _layout(){
             <Stack.Screen name="decor" options={{
                 title: 'Decor'
             }} />
-            <Stack.Screen name="test" options={{
-                title: 'Test'
+            <Stack.Screen name="day" options={{
+                title: 'Select a Date'
             }} />
-
 
     </Stack>
     )
