@@ -15,3 +15,7 @@ Mapview documentation: https://docs.expo.dev/versions/latest/sdk/map-view/
 
 # expo router setup
 https://docs.expo.dev/routing/installation/
+
+# Tabview
+
+https://reactnavigation.org/docs/tab-view/
