@@ -16,7 +16,7 @@ export default function Page() {
          <Button title="Day"/> 
       </Link>
 
-      <Link href="/welcome" asChild>
+      <Link href="/welcome3" asChild>
          <Button title="Welcome"/> 
       </Link>
 

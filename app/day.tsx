@@ -9,18 +9,18 @@ export default function Page() {
         textMonthFontSize: 22, // Set the font size for the month text
         textDayFontSize: 20,   // Set the font size for the day text
         textDayHeaderFontSize: 18, // Set the font size for the day header text
-      };
+    };
 
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
 
             <View style={styles.calendarWrapper}>
-                <Calendar 
-                style={{
-                    borderWidth: 0,
-                }}
-                theme={ customTheme }
+                <Calendar
+                    style={{
+                        borderWidth: 0,
+                    }}
+                    theme={customTheme}
                     // Customize calendar props as needed
                     onDayPress={(day) => console.log('selected day', day)}
                     markedDates={{
@@ -28,26 +28,26 @@ export default function Page() {
                     }}
                 />
             </View>
-            
-            <View>
-            <View style={styles.textContainer}>
-                <Icon name="info" size={30} color="gray" />
-                <Text style={styles.infoText}> These dates are available to you.</Text>
 
+            <View>
+                <View style={styles.textContainer}>
+                    <Icon name="info" size={30} color="gray" />
+                    <Text style={styles.infoText}> These dates are available to you.</Text>
+
+                </View>
+                <View style={styles.textContainer}>
+                    <Icon name="clock" size={30} color="gray" />
+                    <Text style={styles.infoText}> ? days until event.</Text>
+                </View>
             </View>
-            <View style={styles.textContainer}>
-                <Icon name="clock" size={30} color="gray" />
-                <Text style={styles.infoText}> ? days until event.</Text>
-            </View>
-            </View>
-            
+
             <View style={styles.buttonContainer}>
-          <Button 
-            title="Set day"
-            color={"black"}
-            onPress={() => alert('Continue button clicked')}
-          />
-        </View>
+                <Button
+                    title="Set day"
+                    color={"black"}
+                    onPress={() => alert('Continue button clicked')}
+                />
+            </View>
 
         </View>
 
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         padding: 16, // Adjust the padding as needed
         //backgroundColor: 'white', // Optional background color for the padding area
     },
-    
+
     infoText: {
         fontSize: 18,
         fontWeight: 'bold',

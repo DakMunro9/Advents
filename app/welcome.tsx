@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
-//import { Divider } from 'react-native-elements';
+
 import { Link } from 'expo-router';
 
 export default function Page() {
