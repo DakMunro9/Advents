@@ -56,7 +56,7 @@ function ChildComponent(){
             <View>
                 <Random_Stuff />
             </View>
-            <PrimaryButton title={PrimaryButtonTitles.add_event} isPressed={() => [insert preferred methods here]}/>
+            ==<PrimaryButton title={PrimaryButtonTitles.add_event} isPressed={() => [insert preferred methods here]}/>==
         </View>
     )
 }
