@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { TextInput, TextInputProps, View } from 'react-native';
-import { TextFieldStyles, DefaultTextColor } from './TextFieldStyles'; 
+import { TextFieldStyles, DefaultTextColor } from '../../utils/styles/TextFieldStyles'; 
 
 interface TextFieldProps extends TextInputProps {
+  currentText(text: any): void
   defaultText?: string
   keyboard?: TextInputProps["inputMode"]
-  currentText(text: any): void
 }
 
 const TextField: React.FC<TextFieldProps> = (props) => {
@@ -16,18 +16,17 @@ const TextField: React.FC<TextFieldProps> = (props) => {
     setText(text)
     props.currentText(text)
   }
+
   return (
-    
-      <TextInput
-        editable
-        style={TextFieldStyles.input}
-        placeholderTextColor={DefaultTextColor}
-        placeholder={props.defaultText}
-        onChangeText={(text) => textHandler(text)}
-        value={text}
-        inputMode={props.keyboard}
-      />
-    
+    <TextInput
+      editable
+      style={TextFieldStyles.input}
+      placeholderTextColor={DefaultTextColor}
+      placeholder={props.defaultText}
+      onChangeText={(text) => textHandler(text)}
+      value={text}
+      inputMode={props.keyboard}
+    />
   );
 };
 

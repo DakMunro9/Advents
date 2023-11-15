@@ -1,20 +1,26 @@
 import React from 'react';
+import { View } from 'react-native';
 import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
-import { buttonStyles } from './ButtonStyles';
-import { ButtonXTitles } from '../../utils/advent-types';
+import { buttonStyles } from '../../utils/styles/ButtonStyles';
+import { PrimaryButtonTitles } from '../../utils/advent-types';
+import { textStyles } from '../../utils/styles/TextStyles';
 
 interface ButtonProps extends TouchableOpacityProps {
-  title: string | ButtonXTitles; 
+  title: string | PrimaryButtonTitles;
+  isPressed(): void 
 }
 
-//may need to surrond in a fragment (<></>) for best results
 
-const Buttonx: React.FC<ButtonProps> = ({ title, style, ...props }) => {
+
+const PrimaryButton: React.FC<ButtonProps> = ({ title, style, ...props }) => {
     return (
-      <TouchableOpacity style={[buttonStyles.button, style]} {...props}>
-        <Text style={buttonStyles.text}>{title}</Text>
-      </TouchableOpacity>
+      <View style={buttonStyles.buttonContainer}>
+        <TouchableOpacity style={[buttonStyles.button, style]} {...props} onPress={() => props.isPressed()}>
+          <Text style={textStyles.primaryButtonText}>{title}</Text>
+        </TouchableOpacity>
+      </View>
+      
     );
   };
 
-export default Buttonx;
+export default PrimaryButton;

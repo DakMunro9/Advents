@@ -4,24 +4,41 @@ import { Link } from 'expo-router';
 import Vendors from '../screens/events/vendors/vendors';
 import Location from '../screens/events/location/location';
 import TextField from '../components/common/TextField';
-import { containerStyles } from '../utils/styles/components';
+import { blockStyles } from '../utils/styles/BlockStyles';
+import { useFonts } from 'expo-font'
+import { textStyles } from '../utils/styles/TextStyles';
+import { FontTypes, PrimaryButtonTitles } from '../utils/advent-types';
+import PrimaryButton from '../components/common/Button';
 
 
 export default function Page() {
+  const [fontsLoaded] = useFonts({
+    [FontTypes.jakarta_semibold]: require('../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf'),
+    [FontTypes.jakarta_regular]: require('../assets/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf'),
+    [FontTypes.jakarta_italic]: require('../assets/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf')
+  })
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.innerView}>
-        <View style={containerStyles.block}>
-          <Text>Hello There</Text>
-          <Text>General Kenobi</Text>
-          <Text>You Are a Bold One</Text>
-        </View>
-        
-        {/* <TextField currentText={(text) => console.log(text)}/> */}
+        {fontsLoaded === false ?
+          <LoadingScreen />    
+          :
+          // Rest of the app goes here
+          <PrimaryButton title={PrimaryButtonTitles.add_event} isPressed={() => console.log('clicked')}/>
+        }
       </View>
     </SafeAreaView>
 
   );
+}
+
+function LoadingScreen(){
+  return (
+    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Loading...</Text>
+    </View>  
+  )
 }
 
 const styles = StyleSheet.create({
@@ -30,7 +47,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fbfcfe',
   },
   innerView: {
+    flex: 1,
     width: '90%',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    // backgroundColor: 'green'
   }
 });

@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet, Dimensions } from "react-native"
 import MapView, { Marker } from "react-native-maps"
-import { containerStyles } from "../../../utils/styles/components"
+import { containerStyles } from "../../../utils/styles/BlockStyles"
 import TextField from "../../../components/common/TextField"
 import { useState } from "react"
 import Buttonx from "../../../components/common/Button"

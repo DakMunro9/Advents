@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export const TextFieldStyles = StyleSheet.create({
   input: {
     height: 45,
-    flex: 1,
     borderWidth: 1,
     backgroundColor: '#f7f8fa', 
     borderColor: 'grey', 

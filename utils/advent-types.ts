@@ -11,7 +11,13 @@ enum AsyncKeys {
     
 }
 
-enum ButtonXTitles {
+enum FontTypes {
+    jakarta_regular = 'Plus-Jakarta-Sans-Var',
+    jakarta_italic = 'Plus-Jakarta-Sans-Var-Italics',
+    jakarta_semibold = 'Plus-Jakarta-Sans-SemiBold'
+}
+
+enum PrimaryButtonTitles {
     continue = 'Continue',
     checkout = 'Checkout',
     pay = 'Pay Now',
@@ -31,4 +37,4 @@ enum ButtonXTitles {
     add_event = 'Add Event'
 }
 
-export { Measurements, AsyncKeys, ButtonXTitles }
+export { Measurements, AsyncKeys, PrimaryButtonTitles, FontTypes }

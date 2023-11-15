@@ -9,12 +9,12 @@ export const buttonStyles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
     height: 50,
-    marginBottom: 15 
   },
-  text: {
-    color: 'white',
-    fontSize: 16,
-  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0
+  }
 });
