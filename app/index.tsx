@@ -20,6 +20,10 @@ export default function Page() {
          <Button title="Welcome"/> 
       </Link>
 
+      <Link href="/signin" asChild>
+         <Button title="Signin"/> 
+      </Link>
+
       <Link href="/test" asChild>
          <Button title="Test"/> 
       </Link>

@@ -59,7 +59,7 @@ const SelectionGrid = () => {
             color={"black"}
             onPress={() => alert('Continue button clicked')}
           />
-        </View>
+      </View>
       
     </View>
   );
