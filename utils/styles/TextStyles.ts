@@ -2,6 +2,8 @@ import { StyleSheet } from "react-native";
 import { FontTypes } from "../advent-types";
 
 
+export const IconBlockColor = '#999f9c'
+
 export const textStyles = StyleSheet.create({
     title: {
         fontFamily: FontTypes.jakarta_regular,
@@ -40,8 +42,17 @@ export const textStyles = StyleSheet.create({
         color: '#FFFFFF'
     },
     secondaryButtonText: {
-        fontFamily: FontTypes.jakarta_regular,
+        fontFamily: FontTypes.jakarta_semibold,
         fontSize: 14,
-        fontWeight: '500'
+    },
+    iconBlockText: {
+        fontFamily: FontTypes.jakarta_regular,
+        fontWeight: '400',
+        color: IconBlockColor
+    },
+    textFieldDefaultText: {
+        fontFamily: FontTypes.jakarta_regular,
+        
     }
 })
+

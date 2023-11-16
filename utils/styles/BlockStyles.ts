@@ -12,5 +12,15 @@ export const blockStyles = StyleSheet.create({
     innerBlock: {
         marginHorizontal: 12,
         alignContent: 'flex-start',
+    },
+    iconBlockContainer: {
+        flexDirection: 'row',
+    },
+    iconBlockIcon: {
+        width: '6.66%'
+    },
+    iconBlockText: {
+        justifyContent: 'flex-start'
     }
+
 })

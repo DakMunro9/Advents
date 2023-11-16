@@ -3,7 +3,7 @@ import MapView, { Marker } from "react-native-maps"
 import { containerStyles } from "../../../utils/styles/BlockStyles"
 import TextField from "../../../components/common/TextField"
 import { useState } from "react"
-import Buttonx from "../../../components/common/Button"
+import Buttonx from "../../../components/common/PrimaryButton"
 import { ButtonXTitles } from "../../../utils/advent-types"
 
 export default function Location(){

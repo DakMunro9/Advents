@@ -7,8 +7,9 @@ import TextField from '../components/common/TextField';
 import { blockStyles } from '../utils/styles/BlockStyles';
 import { useFonts } from 'expo-font'
 import { textStyles } from '../utils/styles/TextStyles';
-import { FontTypes, PrimaryButtonTitles } from '../utils/advent-types';
-import PrimaryButton from '../components/common/Button';
+import { FontTypes, IconBlockTypes } from '../utils/advent-types';
+import SecondaryButton from '../components/common/SecondaryButton';
+import IconBlock from '../components/common/IconBlock';
 
 
 export default function Page() {
@@ -25,7 +26,8 @@ export default function Page() {
           <LoadingScreen />    
           :
           // Rest of the app goes here
-          <PrimaryButton title={PrimaryButtonTitles.add_event} isPressed={() => console.log('clicked')}/>
+          <TextField currentText={(text) => console.log(text)}/>
+          
         }
       </View>
     </SafeAreaView>

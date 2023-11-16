@@ -1,8 +1,8 @@
 import { View, Text, FlatList } from "react-native";
 import Badge from "./components/badge";
 import { TEST_IMAGES } from '../../../utils/export/test-images-exports'
-import InformationBlock from "../../../components/common/InformationBlock";
-import Buttonx from "../../../components/common/Button";
+import InformationBlock from "../../../components/common/IconBlock";
+import Buttonx from "../../../components/common/PrimaryButton";
 import { ButtonXTitles } from "../../../utils/advent-types";
 
 interface VendorProps {

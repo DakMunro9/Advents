@@ -3,12 +3,10 @@ enum Measurements {
     imperial
 }
 
-
 //These have to be defined as strings or async storage won't work
 enum AsyncKeys {
     lat = "LATITUDE",
     lon = "LONGITUDE"
-    
 }
 
 enum FontTypes {
@@ -17,7 +15,7 @@ enum FontTypes {
     jakarta_semibold = 'Plus-Jakarta-Sans-SemiBold'
 }
 
-enum PrimaryButtonTitles {
+enum PrimaryButtonTypes {
     continue = 'Continue',
     checkout = 'Checkout',
     pay = 'Pay Now',
@@ -37,4 +35,19 @@ enum PrimaryButtonTitles {
     add_event = 'Add Event'
 }
 
-export { Measurements, AsyncKeys, PrimaryButtonTitles, FontTypes }
+enum SecondaryButtonTypes {
+    password = 'Forgot Password?',
+    create = 'Create Account',
+    bus_create = 'Create Business Account',
+    signin = 'Sign In',
+    bus_signin = 'Business Sign In',
+    skip = "Skip"
+}
+
+enum IconBlockTypes {
+    info,
+    map_marker,
+    clock
+}
+
+export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes }
