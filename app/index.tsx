@@ -19,36 +19,42 @@ export default function Page() {
     [FontTypes.jakarta_regular]: require('../assets/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf'),
     [FontTypes.jakarta_italic]: require('../assets/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf')
   })
-  
+
+  const placeHolderFunction = () => {
+
+  }
+
   return (
 
     <SafeAreaView style={styles.container}>
       <View style={styles.innerView}>
         {fontsLoaded === false ?
-          <LoadingScreen />    
+          <LoadingScreen />
           :
           // Rest of the app goes here
-          // <View style={styles.container}>
-          //   <Text>This is index.tsx</Text>
-          //   <StatusBar style="auto" />
-      
-          //   <Link href="/decor" asChild>
-          //     <Button title="Decor"/> 
-          //   </Link>
-      
-          //   <Link href="/day" asChild>
-          //     <Button title="Day"/> 
-          //   </Link>
-      
-          //   <Link href="/welcome" asChild>
-          //     <Button title="Welcome"/> 
-          //   </Link>
-      
-          //   <Link href="/test" asChild>
-          //     <Button title="Test"/> 
-          //   </Link>
-          // </View>
-          <IconBlock icon={IconBlockTypes.info} text="Have you ever heard of The Tragedy of Darth Plaguis The Wise? I thought not. It's not a tale the jedi will tell you" />
+
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <IconBlock icon={IconBlockTypes.info} text="Have you ever heard of The Tragedy of Darth Plaguis The Wise? 
+            I thought not. It's not a tale the jedi will tell you" />
+
+            <Link href="/welcome" asChild>
+              <Button title="Welcome" />
+            </Link>
+
+            <Link href="/signin" asChild>
+              <Button title="Signin" />
+            </Link>
+
+            <Link href="/decor" asChild>
+              <Button title="Decor" />
+            </Link>
+
+            <Link href="/day" asChild>
+              <Button title="Day" />
+            </Link>
+
+          </View>
+
         }
       </View>
     </SafeAreaView>
@@ -56,23 +62,23 @@ export default function Page() {
   );
 }
 
-function LoadingScreen(){
+function LoadingScreen() {
   return (
-    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
       <Text>Loading...</Text>
-    </View>  
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
     backgroundColor: '#fbfcfe',
   },
   innerView: {
     flex: 1,
     width: '90%',
     alignSelf: 'center',
-    // backgroundColor: 'green'
   }
 });
