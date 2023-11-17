@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform, View, TouchableOpacity, Button } from 'react-native';
 import IconFeather from 'react-native-vector-icons/Feather';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Link } from 'expo-router';
@@ -25,6 +25,12 @@ export default function Page() {
   }
 
   return (
+
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ flex: 1 }}
+    >
+
     <View style={styles.container}>
 
       <View style={{ marginLeft: 20, marginBottom: 80, marginTop: 20 }}>
@@ -118,7 +124,7 @@ export default function Page() {
       </View>
 
     </View>
-
+    </KeyboardAvoidingView>
   );
 }
 
