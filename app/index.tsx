@@ -45,6 +45,10 @@ export default function Page() {
               <Button title="Signin" />
             </Link>
 
+            <Link href="/createaccount" asChild>
+              <Button title="Create Account" />
+            </Link>
+
             <Link href="/decor" asChild>
               <Button title="Decor" />
             </Link>

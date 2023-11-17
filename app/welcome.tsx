@@ -110,37 +110,32 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     justifyContent: 'center',
     textAlign: 'center',
-    //color: 'gray',
   },
   subText: {
     fontSize: 20,
-    //fontWeight: 'bold',
     justifyContent: 'center',
     color: 'gray',
     alignItems: 'center',
   },
   loginContainer: {
-    marginTop: 30, // Push the view to the bottom
+    marginTop: 30,
     marginBottom: 50,
     backgroundColor: 'white',
   },
   buttonContainer: {
-    marginTop: 20, // Adjust the padding as needed
+    marginTop: 20,
     marginHorizontal: 50,
     backgroundColor: 'white',
   },
   textContainer: {
     flexDirection: 'row',
-    marginTop: 20, // Adjust the padding as needed
-    //marginTop: 'auto',
+    marginTop: 20, 
     alignItems: 'center',
     justifyContent: 'center',
   },
   linkText: {
     fontSize: 20,
     fontWeight: 'bold',
-    //justifyContent: 'flex-start',
-    //color: 'gray',
   },
 
 });
