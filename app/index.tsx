@@ -42,7 +42,11 @@ export default function Page() {
             </Link>
 
             <Link href="/signin" asChild>
-              <Button title="Signin" />
+              <Button title="Sign in" />
+            </Link>
+
+            <Link href="/forgotpassword" asChild>
+              <Button title="forgot password" />
             </Link>
 
             <Link href="/createaccount" asChild>

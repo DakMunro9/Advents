@@ -35,8 +35,8 @@ export default function Page() {
     <View style={styles.container}>
 
       <View style={{ marginLeft: 20, marginBottom: 80, marginTop: 20 }}>
-        <Text style={styles.mainText}>Sign In</Text>
-        <Text style={styles.subText}>Please sign in to your account</Text>
+        <Text style={styles.mainText}>Forgot password</Text>
+        <Text style={styles.subText}>Reset your password</Text>
       </View>
 
       <View style={{ marginLeft: 20 }}>
@@ -53,74 +53,11 @@ export default function Page() {
         />
       </View>
 
-      <View style={{ marginLeft: 20 }}>
-        <Text style={styles.labelText}>Password</Text>
-        <View style={{ flexDirection: 'row', }}>
-          <TextInput
-            style={[
-              styles.textInput,
-              selectedInput === 'textInput2' ? styles.focusedTextInput : null,
-            ]}
-            placeholder="Enter your password"
-            secureTextEntry={hidePassword} // Set secureTextEntry to true to hide the text
-            onChangeText={(text) => console.log(text)}
-            onFocus={() => handleFocus('textInput2')}
-            onBlur={handleBlur}
-          />
-          <View style={{ marginLeft: 30, marginTop: 15 }}>
-            <TouchableOpacity onPress={togglePasswordVisibility}>
-              <IconFeather name="eye" size={30} color="black" />
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-      </View>
-
-      <View>
-        <Link href="/forgotpassword" asChild>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'right', marginRight: 20 }}>Forgot Password?</Text>
-        </Link>
-      </View>
-
       <View style={styles.buttonContainer}>
         <PrimaryButton
-          title="Sign In"
-          isPressed={() => alert('Sign In button clicked')}
+          title="Send code"
+          isPressed={() => alert('Send code button clicked')}
         />
-      </View>
-
-      <View>
-        <Text style={{ fontSize: 20, justifyContent: 'center', color: 'gray', textAlign: 'center', }}>
-          Or sign in using your social profile
-        </Text>
-      </View>
-
-      <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20 }}>
-        <View style={{ marginHorizontal: 30 }}>
-          <TouchableOpacity>
-            <IconFontAwesome name="google" size={30} color="black" />
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ marginHorizontal: 30 }}>
-          <TouchableOpacity>
-            <IconFontAwesome name="facebook-official" size={30} color="black" />
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ marginHorizontal: 30 }}>
-          <TouchableOpacity>
-            <IconFontAwesome name="instagram" size={30} color="black" />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.textContainer}>
-        <Text style={styles.subText}>Don't have an account? </Text>
-        <Link href="/" asChild>
-          <Text style={styles.linkText}>Create Account</Text>
-        </Link>
       </View>
 
     </View>
@@ -166,7 +103,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 'auto',
-    marginBottom: 5,
+    marginBottom: 'auto',
     marginHorizontal: 20,
     height: 50,
   },
