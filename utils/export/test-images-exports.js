@@ -1,6 +1,6 @@
 
 
-const TESTIMAGES = {
+const TEST_IMAGES = {
     "LOREM1": require('../../assets/test-images/lorem-ipsum-1.jpg'),
     "LOREM2": require('../../assets/test-images/lorem-ipsum-2.jpg'),
     "LOREM3": require('../../assets/test-images/lorem-ipsum-3.jpg'),
@@ -10,4 +10,4 @@ const TESTIMAGES = {
     "LOREM7": require('../../assets/test-images/lorem-ipsum-7.jpg')
 }
 
-export { TESTIMAGES }
+export { TEST_IMAGES }

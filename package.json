@@ -29,10 +29,12 @@
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-vector-icons": "^10.0.2",
-    "react-native-web": "~0.19.6"
+    "react-native-web": "~0.19.6",
+    "expo-font": "~11.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/jquery": "^3.5.27",
     "@types/react": "~18.2.14",
     "typescript": "^5.1.3"
   },
