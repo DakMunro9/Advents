@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import { Link } from 'expo-router';
+import PrimaryButton from '../components/common/PrimaryButton';
 
 // "Explore upcoming and nearby events"
 const FirstRoute = () => (
@@ -84,10 +85,9 @@ const TabbedView = () => {
       <View style={styles.loginContainer}>
 
         <View style={styles.buttonContainer}>
-          <Button
+          <PrimaryButton
             title="Create an account"
-            color={"black"}
-            onPress={() => alert('Signup button clicked')}
+            isPressed={() => alert('Signup button clicked')}
           />
         </View>
 
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   buttonContainer: {
-    marginTop: 20,
+    marginTop: 80,
     marginHorizontal: 50,
     backgroundColor: 'white',
   },

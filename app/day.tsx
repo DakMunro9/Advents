@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { Calendar, CalendarTheme } from 'react-native-calendars';
 import Icon from 'react-native-vector-icons/Feather';
 import { Link } from 'expo-router';
+import PrimaryButton from '../components/common/PrimaryButton';
 
 export default function Page() {
     const customTheme: CalendarTheme = {
@@ -42,10 +43,9 @@ export default function Page() {
             </View>
 
             <View style={styles.buttonContainer}>
-                <Button
+                <PrimaryButton
                     title="Set day"
-                    color={"black"}
-                    onPress={() => alert('Continue button clicked')}
+                    isPressed={() => alert('Continue button clicked')}
                 />
             </View>
 

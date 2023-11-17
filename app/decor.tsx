@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import PrimaryButton from '../components/common/PrimaryButton';
 
 const SelectionGrid = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -54,10 +55,9 @@ const SelectionGrid = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-          <Button 
+          <PrimaryButton 
             title="Continue"
-            color={"black"}
-            onPress={() => alert('Continue button clicked')}
+            isPressed={() => alert('Continue button clicked')}
           />
       </View>
       

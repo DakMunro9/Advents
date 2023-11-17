@@ -4,6 +4,7 @@ import { StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform, View, Touc
 import IconFeather from 'react-native-vector-icons/Feather';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Link } from 'expo-router';
+import PrimaryButton from '../components/common/PrimaryButton';
 
 export default function Page() {
 
@@ -83,10 +84,9 @@ export default function Page() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button
+        <PrimaryButton
           title="Sign In"
-          color={"black"}
-          onPress={() => alert('Sign In button clicked')}
+          isPressed={() => alert('Sign In button clicked')}
         />
       </View>
 
