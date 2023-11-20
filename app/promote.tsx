@@ -145,7 +145,7 @@ export default function Page() {
               <TextInput
                 style={styles.textInput}
                 keyboardType="numeric"
-                placeholder="Enter a number"
+                placeholder="Enter a price"
                 value={value}
                 onChangeText={handleNumericInput}
               />

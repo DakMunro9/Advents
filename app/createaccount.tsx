@@ -50,7 +50,6 @@ export default function Page() {
             </TouchableOpacity>
           </View>
 
-
           <View style={{ marginLeft: 20 }}>
             <Text style={styles.labelText}>Name</Text>
             <TextInput
