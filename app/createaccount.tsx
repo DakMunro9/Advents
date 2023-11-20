@@ -102,7 +102,6 @@ export default function Page() {
           </View>
         </ScrollView>
 
-
         <View style={{ marginVertical: 20 }}>
           <Text style={{ fontSize: 16, textAlign: 'center', marginHorizontal: 20 }}>Password must be at least be 12 characters and contain a numeric and special character.</Text>
         </View>

@@ -61,6 +61,14 @@ export default function Page() {
               <Button title="Day" />
             </Link>
 
+            <Link href="/promote" asChild>
+              <Button title="Promote" />
+            </Link>
+
+            <Link href="/test" asChild>
+              <Button title="Test" />
+            </Link>
+
           </View>
 
         }
