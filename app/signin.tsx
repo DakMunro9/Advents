@@ -118,7 +118,7 @@ export default function Page() {
 
       <View style={styles.textContainer}>
         <Text style={styles.subText}>Don't have an account? </Text>
-        <Link href="/" asChild>
+        <Link href="/createaccount" asChild>
           <Text style={styles.linkText}>Create Account</Text>
         </Link>
       </View>

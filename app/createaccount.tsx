@@ -142,7 +142,7 @@ export default function Page() {
 
         <View style={styles.textContainer}>
           <Text style={styles.subText}>Already have an account? </Text>
-          <Link href="/" asChild>
+          <Link href="/signin" asChild>
             <Text style={styles.linkText}>Sign in</Text>
           </Link>
         </View>
