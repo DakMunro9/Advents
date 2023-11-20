@@ -48,7 +48,7 @@ export default function Page() {
           //     <Button title="Test"/> 
           //   </Link>
           // </View>
-          <IconBlock icon={IconBlockTypes.info} text="Have you ever heard of The Tragedy of Darth Plaguis The Wise? I thought not. It's not a tale the jedi will tell you" />
+          <Location />
         }
       </View>
     </SafeAreaView>
