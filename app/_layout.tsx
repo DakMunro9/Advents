@@ -15,13 +15,25 @@ export default function _layout(){
                 title: 'Home'
             }} />
             <Stack.Screen name="welcome" options={{
-                title: 'Welcome'
+                title: ''
+            }} />
+            <Stack.Screen name="signin" options={{
+                title: ''
+            }} />
+            <Stack.Screen name="forgotpassword" options={{
+                title: ''
+            }} />
+            <Stack.Screen name="createaccount" options={{
+                title: ''
             }} />
             <Stack.Screen name="decor" options={{
                 title: 'Decor'
             }} />
             <Stack.Screen name="day" options={{
                 title: 'Select a Date'
+            }} />
+            <Stack.Screen name="promote" options={{
+                title: 'List Your Services'
             }} />
 
     </Stack>
