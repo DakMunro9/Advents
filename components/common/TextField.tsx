@@ -12,11 +12,12 @@ interface TextFieldProps extends TextInputProps {
 
 const TextField: React.FC<TextFieldProps> = (props) => {
   const [text, setText] = useState<any>()
-
+  
 
   function textHandler(text: any){
     setText(text)
     props.currentText(text)
+    
   }
 
   return (

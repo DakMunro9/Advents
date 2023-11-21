@@ -11,6 +11,7 @@ import { FontTypes, IconBlockTypes } from '../utils/advent-types';
 import SecondaryButton from '../components/common/SecondaryButton';
 import IconBlock from '../components/common/IconBlock';
 import PrimaryButton from '../components/common/PrimaryButton';
+import Budget from '../screens/events/budget/budget';
 
 
 export default function Page() {
@@ -48,7 +49,7 @@ export default function Page() {
           //     <Button title="Test"/> 
           //   </Link>
           // </View>
-          <Location />
+          <Budget />
         }
       </View>
     </SafeAreaView>
