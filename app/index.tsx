@@ -49,7 +49,7 @@ export default function Page() {
           //     <Button title="Test"/> 
           //   </Link>
           // </View>
-          <Budget />
+          <Vendors />
         }
       </View>
     </SafeAreaView>
