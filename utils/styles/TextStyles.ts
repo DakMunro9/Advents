@@ -45,6 +45,10 @@ export const textStyles = StyleSheet.create({
         fontFamily: FontTypes.jakarta_semibold,
         fontSize: 14,
     },
+    regularText: {
+        fontFamily: FontTypes.jakarta_regular,
+        fontSize: 14
+    },
     iconBlockText: {
         fontFamily: FontTypes.jakarta_regular,
         fontWeight: '400',

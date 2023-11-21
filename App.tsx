@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Buttonx from './components/common/PrimaryButton';
 import TextField from './components/common/TextField';
-import { useGeolocation } from './utils/export/exports'
+import { useGeolocation } from './utils/export/hook-exports'
 import Vendors from './screens/events/vendors/vendors';
 
 //Debug purposes

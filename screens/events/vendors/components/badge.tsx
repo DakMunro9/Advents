@@ -1,10 +1,12 @@
 import { Pressable, Image, Text, View } from "react-native";
-import { VendorStyles } from "../vendors-styles";
+import { vendorStyles } from "../../../../utils/styles/vendors-styles";
 import { useState } from "react";
+import { textStyles } from "../../../../utils/styles/TextStyles";
 
 interface BadgeProps {
     image: any,
     name: string
+    selectedName(): string
 }
 
 export default function Badge(props: BadgeProps){
@@ -13,9 +15,9 @@ export default function Badge(props: BadgeProps){
     return ( 
         <View style={{alignItems: 'center'}}>
             <Pressable onPress={() => setIsSelected(prevState => !prevState)} >
-                <Image source={props.image} style={isSelected === false ? VendorStyles.unselected : VendorStyles.selected}/>
+                <Image source={props.image} style={isSelected === false ? vendorStyles.unselected : vendorStyles.selected}/>
             </Pressable>
-            <Text>{props.name}</Text>
+            <Text style={textStyles.regularText}>{props.name}</Text>
         </View>
         
 
