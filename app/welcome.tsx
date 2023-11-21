@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
+
+
 
 // "Explore upcoming and nearby events"
 const FirstRoute = () => (
@@ -68,7 +70,11 @@ const TabbedView = () => {
     />
   );
 
+  const router = useRouter();
+
   return (
+    
+
     <View style={{ flex: 1, backgroundColor: 'white' }}>
 
       {/* Tab view */}
@@ -85,15 +91,16 @@ const TabbedView = () => {
       <View style={styles.loginContainer}>
 
         <View style={styles.buttonContainer}>
+          
           <PrimaryButton
             title="Create an account"
-            isPressed={() => alert('Signup button clicked')}
+            isPressed={() => router.push("/createaccount")}
           />
         </View>
 
         <View style={styles.textContainer}>
           <Text style={styles.subText}>Already have an account? </Text>
-          <Link href="/" asChild>
+          <Link href="/signin" asChild>
             <Text style={styles.linkText}>Sign In</Text>
           </Link>
         </View>
