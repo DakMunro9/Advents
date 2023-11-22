@@ -38,5 +38,38 @@ export const serviceStyles = StyleSheet.create({
     paymentsHeader: {
         flexDirection: 'row', 
         justifyContent: 'space-between'
+    },
+    split: {
+        marginVertical: 5,
+        borderWidth: 2,
+        height: 50,
+        borderRadius: 5,
+        borderColor: '#dcdcdc',
+        flexDirection: 'row'
+    },
+    splitInnerContents: {
+        marginHorizontal: 10, 
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        flex: 1, 
+        alignItems: 'center'
+    },
+    cardBlock: {
+        flexDirection: 'row',
+        height: 40,
+        marginVertical: 3
+    },
+    cardBlockCard: {
+        flex: 1,
+        marginHorizontal: 10,
+        justifyContent: 'center'
+    },
+    cardBlockArrow: {
+        flex: 1,
+        alignItems: 'flex-end',
+        justifyContent: 'center'
+    },
+    cardBlockText: {
+        flex: 8,
     }
 })
