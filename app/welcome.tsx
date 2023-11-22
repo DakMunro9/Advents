@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
+import PrimaryButton from '../components/common/PrimaryButton';
+
+
 
 // "Explore upcoming and nearby events"
 const FirstRoute = () => (
@@ -67,7 +70,11 @@ const TabbedView = () => {
     />
   );
 
+  const router = useRouter();
+
   return (
+    
+
     <View style={{ flex: 1, backgroundColor: 'white' }}>
 
       {/* Tab view */}
@@ -84,16 +91,16 @@ const TabbedView = () => {
       <View style={styles.loginContainer}>
 
         <View style={styles.buttonContainer}>
-          <Button
+          
+          <PrimaryButton
             title="Create an account"
-            color={"black"}
-            onPress={() => alert('Signup button clicked')}
+            isPressed={() => router.push("/createaccount")}
           />
         </View>
 
         <View style={styles.textContainer}>
           <Text style={styles.subText}>Already have an account? </Text>
-          <Link href="/" asChild>
+          <Link href="/signin" asChild>
             <Text style={styles.linkText}>Sign In</Text>
           </Link>
         </View>
@@ -110,37 +117,32 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     justifyContent: 'center',
     textAlign: 'center',
-    //color: 'gray',
   },
   subText: {
     fontSize: 20,
-    //fontWeight: 'bold',
     justifyContent: 'center',
     color: 'gray',
     alignItems: 'center',
   },
   loginContainer: {
-    marginTop: 30, // Push the view to the bottom
+    marginTop: 30,
     marginBottom: 50,
     backgroundColor: 'white',
   },
   buttonContainer: {
-    marginTop: 20, // Adjust the padding as needed
+    marginTop: 80,
     marginHorizontal: 50,
     backgroundColor: 'white',
   },
   textContainer: {
     flexDirection: 'row',
-    marginTop: 20, // Adjust the padding as needed
-    //marginTop: 'auto',
+    marginTop: 20, 
     alignItems: 'center',
     justifyContent: 'center',
   },
   linkText: {
     fontSize: 20,
     fontWeight: 'bold',
-    //justifyContent: 'flex-start',
-    //color: 'gray',
   },
 
 });
