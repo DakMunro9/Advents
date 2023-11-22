@@ -6,15 +6,20 @@ import { textStyles } from "../../../../utils/styles/TextStyles";
 interface BadgeProps {
     image: any,
     name: string
-    selectedName(): string
+    selectedName(name: string): void
 }
 
 export default function Badge(props: BadgeProps){
     const [isSelected, setIsSelected] = useState<boolean>(false)
 
+    function handleClick(){
+        setIsSelected(prevState => !prevState)
+        props.selectedName(props.name)
+    }
+
     return ( 
         <View style={{alignItems: 'center'}}>
-            <Pressable onPress={() => setIsSelected(prevState => !prevState)} >
+            <Pressable onPress={() => handleClick()} >
                 <Image source={props.image} style={isSelected === false ? vendorStyles.unselected : vendorStyles.selected}/>
             </Pressable>
             <Text style={textStyles.regularText}>{props.name}</Text>

@@ -7,9 +7,7 @@ import { IconBlockTypes, PrimaryButtonTypes } from "../../../utils/advent-types"
 import PrimaryButton from "../../../components/common/PrimaryButton";
 
 
-interface VendorProps {
 
-}
 
 interface VendorListProps {
     selectedName(name:string): void
@@ -50,11 +48,17 @@ const sampleData = [
 ]
 
 
-export default function Vendors(props: VendorProps){
+export default function Vendors(){
     let selectedVendors: Array<string> = []
 
     function handleSelection(name: string){
-
+        if(selectedVendors.includes(name)){
+            selectedVendors = selectedVendors.filter((currentName) => name !== currentName)
+        }
+        else{
+            selectedVendors.push(name)
+        }
+        console.log(selectedVendors)
     }
 
     return (
@@ -90,7 +94,7 @@ function VendorList(props: VendorListProps){
                 numColumns={3}
                 data={sampleData}
                 renderItem={({ item }) => (
-                    <Badge selectedName={() => }{...item}/>
+                    <Badge selectedName={(name: string) => props.selectedName(name)}{...item}/>
                 )}
                 />
         </View>
