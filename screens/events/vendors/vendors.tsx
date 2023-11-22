@@ -58,7 +58,6 @@ export default function Vendors(){
         else{
             selectedVendors.push(name)
         }
-        console.log(selectedVendors)
     }
 
     return (

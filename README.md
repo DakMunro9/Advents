@@ -153,9 +153,15 @@ It looks like we are going to use Azure SQL for persistant data so we may need t
 
 Mapview documentation: https://docs.expo.dev/versions/latest/sdk/map-view/
 
-# expo router setup
+## expo router setup
+
 https://docs.expo.dev/routing/installation/
 
-# Tabview
+## Tabview
 
 https://reactnavigation.org/docs/tab-view/
+
+## Stripe
+
+https://docs.expo.dev/versions/latest/sdk/stripe/
+https://stripe.dev/stripe-react-native/api-reference/index.html

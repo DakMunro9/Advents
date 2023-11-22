@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, Switch } from 'react-native';
 import { Link } from 'expo-router';
 import Vendors from '../screens/events/vendors/vendors';
 import Location from '../screens/events/location/location';
@@ -12,6 +12,7 @@ import SecondaryButton from '../components/common/SecondaryButton';
 import IconBlock from '../components/common/IconBlock';
 import PrimaryButton from '../components/common/PrimaryButton';
 import Budget from '../screens/events/budget/budget';
+import ServiceFee from '../screens/events/service-fee/ServiceFee';
 
 
 export default function Page() {
@@ -49,7 +50,7 @@ export default function Page() {
           //     <Button title="Test"/> 
           //   </Link>
           // </View>
-          <Vendors />
+          <ServiceFee />
         }
       </View>
     </SafeAreaView>

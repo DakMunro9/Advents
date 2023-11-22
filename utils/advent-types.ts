@@ -41,7 +41,8 @@ enum SecondaryButtonTypes {
     bus_create = 'Create Business Account',
     signin = 'Sign In',
     bus_signin = 'Business Sign In',
-    skip = "Skip"
+    skip = "Skip",
+    add = "Add Another"
 }
 
 enum IconBlockTypes {
