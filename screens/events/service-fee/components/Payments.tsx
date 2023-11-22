@@ -3,16 +3,22 @@ import { serviceStyles, textStyles } from '../../../../utils/export/style-export
 import SecondaryButton from '../../../../components/common/SecondaryButton'
 import { SecondaryButtonTypes } from '../../../../utils/advent-types'
 import CardBlock from './CardBlock'
+import { useState } from 'react'
 
 //TODO: Cardblocks are hard coded, this is just a mockup with no functionality
 
-export default function Payments(){
+interface SplitPaymentProps {
+    isClicked(): void
+    value: boolean
+}
 
+export default function Payments(){
+    const [switchToggle, setSwitchToggle] = useState<boolean>(false)
 
     return (
         <View style={serviceStyles.payments}>
             <Header />
-            <SplitPayment />
+            <SplitPayment value={switchToggle} isClicked={() => setSwitchToggle(prevState => !prevState)}/>
             <CardBlock isPressed={() => console.log('clicked')}/>
         </View>
         
@@ -31,15 +37,16 @@ function Header(){
     )
 }
 
-function SplitPayment(){
+function SplitPayment(props: SplitPaymentProps){
     return(
-        
         <View style={serviceStyles.split}>
             <View style={serviceStyles.splitInnerContents}>
                 <Text style={textStyles.regularText}>Split Payment</Text>
-                <Switch />
-            </View>
-            
+                <Switch 
+                onValueChange={() => props.isClicked()}
+                value={props.value}
+                />
+            </View> 
         </View>
     )
 
