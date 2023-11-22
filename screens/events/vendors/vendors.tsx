@@ -1,12 +1,16 @@
 import { View, Text, FlatList } from "react-native";
 import Badge from "./components/badge";
 import { TEST_IMAGES } from '../../../utils/export/test-images-exports'
-import InformationBlock from "../../../components/common/IconBlock";
-import Buttonx from "../../../components/common/PrimaryButton";
-import { ButtonXTitles } from "../../../utils/advent-types";
+import { blockStyles, textStyles, vendorStyles } from '../../../utils/export/style-exports'
+import IconBlock from '../../../components/common/IconBlock'
+import { IconBlockTypes, PrimaryButtonTypes } from "../../../utils/advent-types";
+import PrimaryButton from "../../../components/common/PrimaryButton";
 
-interface VendorProps {
 
+
+
+interface VendorListProps {
+    selectedName(name:string): void
 }
 
 const sampleData = [
@@ -43,36 +47,45 @@ const sampleData = [
 
 ]
 
-const infoText = "These vendors appear based on the information you entered for your event"
 
-export default function Vendors(props: VendorProps){
+export default function Vendors(){
+    let selectedVendors: Array<string> = []
 
-
+    function handleSelection(name: string){
+        if(selectedVendors.includes(name)){
+            selectedVendors = selectedVendors.filter((currentName) => name !== currentName)
+        }
+        else{
+            selectedVendors.push(name)
+        }
+    }
 
     return (
         <>
-            <>
-                <Header />
-                <VendorList />
-                <InformationBlock text={infoText} />
-            </>
-            <>
-                <Buttonx title={ButtonXTitles.continue} />
-            </>
+            <View style={blockStyles.block}>
+                <View style={blockStyles.innerBlock}>
+                    <Header />
+                    <VendorList selectedName={(name) => handleSelection(name)}/>
+                    <IconBlock icon={IconBlockTypes.info} text="These vendors appear based on the information you entered for your event" />    
+                </View>
+            </View>
+            <PrimaryButton title={PrimaryButtonTypes.continue} isPressed={() => console.log("#TODO: link this to another screen")}/>
         </>
+        
+        
     )
 }
 
 function Header(){
 
     return ( 
-        <View style={{alignItems: 'center'}}>
-            <Text>Select All Desired Vendors</Text>
+        <View>
+            <Text style={textStyles.regularText}>Select All Desired Vendors</Text>
         </View>
     )
 }
 
-function VendorList(){
+function VendorList(props: VendorListProps){
 
     return (
         <View style={{height: 325}}>
@@ -80,7 +93,7 @@ function VendorList(){
                 numColumns={3}
                 data={sampleData}
                 renderItem={({ item }) => (
-                    <Badge {...item}/>
+                    <Badge selectedName={(name: string) => props.selectedName(name)}{...item}/>
                 )}
                 />
         </View>

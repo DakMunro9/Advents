@@ -5,7 +5,7 @@ const margin = 12
 const borderWidth= 7
 
 
-export const VendorStyles = StyleSheet.create({
+export const vendorStyles = StyleSheet.create({
     unselected: {
         height: size,
         width: size,
@@ -18,6 +18,6 @@ export const VendorStyles = StyleSheet.create({
         borderRadius: size/2,
         margin: margin,
         borderWidth: borderWidth,
-        borderColor: 'blue'
+        borderColor: '#0062cc'
     }
 })

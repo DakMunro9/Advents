@@ -21,7 +21,7 @@ export const textStyles = StyleSheet.create({
         fontWeight: '700'
     },
     sectionHeader: {
-        fontFamily: FontTypes.jakarta_regular,
+        fontFamily: FontTypes.jakarta_semibold,
         fontSize: 18,
         fontWeight: '600'
     },
@@ -44,6 +44,10 @@ export const textStyles = StyleSheet.create({
     secondaryButtonText: {
         fontFamily: FontTypes.jakarta_semibold,
         fontSize: 14,
+    },
+    regularText: {
+        fontFamily: FontTypes.jakarta_regular,
+        fontSize: 14
     },
     iconBlockText: {
         fontFamily: FontTypes.jakarta_regular,

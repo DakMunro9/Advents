@@ -31,7 +31,13 @@
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-vector-icons": "^10.0.2",
+<<<<<<< HEAD
     "react-native-web": "~0.19.6"
+=======
+    "react-native-web": "~0.19.6",
+    "expo-font": "~11.4.0",
+    "@stripe/stripe-react-native": "0.28.0"
+>>>>>>> financial
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
