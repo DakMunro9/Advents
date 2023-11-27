@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import { Link, useRouter } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
-
-
 
 // "Explore upcoming and nearby events"
 const FirstRoute = () => (
@@ -22,17 +20,8 @@ const FirstRoute = () => (
   </View>
 );
 
-
-const SecondRoute = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-
-    <Text>Second Tab</Text>
-
-  </View>
-);
-
 // "The best way to plan your event for any occasion."
-const ThirdRoute = () => (
+const SecondRoute = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
 
     <Text style={{ marginBottom: 100 }}>(icon here)</Text>
@@ -44,22 +33,31 @@ const ThirdRoute = () => (
       <Text style={styles.subText}>ADVENTS</Text>
     </View>
 
-
   </View>
 );
 
 const renderScene = SceneMap({
   first: FirstRoute,
   second: SecondRoute,
-  third: ThirdRoute,
 });
 
 const TabbedView = () => {
   const [index, setIndex] = useState(0);
+
+  // This autoscrolls the tabView
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Calculate the next index and loop back to the first tab if needed
+      const nextIndex = (index + 1) % routes.length;
+      setIndex(nextIndex);
+    }, 4000); // Adjust the delay (in milliseconds) as needed
+
+    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+  }, [index]);
+
   const [routes] = useState([
     { key: 'first', title: 'First' },
     { key: 'second', title: 'Second' },
-    { key: 'third', title: 'Third' },
   ]);
 
   const renderTabBar = props => (
@@ -73,7 +71,6 @@ const TabbedView = () => {
   const router = useRouter();
 
   return (
-    
 
     <View style={{ flex: 1, backgroundColor: 'white' }}>
 
@@ -82,7 +79,6 @@ const TabbedView = () => {
         navigationState={{ index, routes }}
         renderScene={renderScene}
         onIndexChange={setIndex}
-        //renderTabBar={() => null} // removes tab bar
         renderTabBar={renderTabBar}
         tabBarPosition='bottom'
       />
@@ -91,7 +87,7 @@ const TabbedView = () => {
       <View style={styles.loginContainer}>
 
         <View style={styles.buttonContainer}>
-          
+
           <PrimaryButton
             title="Create an account"
             isPressed={() => router.push("/createaccount")}
@@ -136,7 +132,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexDirection: 'row',
-    marginTop: 20, 
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -144,7 +140,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-
 });
 
 export default TabbedView;
