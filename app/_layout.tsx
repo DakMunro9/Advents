@@ -26,6 +26,9 @@ export default function _layout(){
             <Stack.Screen name="createaccount" options={{
                 title: ''
             }} />
+            <Stack.Screen name="connectsocial" options={{
+                title: ''
+            }} />
             <Stack.Screen name="decor" options={{
                 title: 'Decor'
             }} />
