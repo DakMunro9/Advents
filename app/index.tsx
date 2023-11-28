@@ -34,44 +34,7 @@ export default function Page() {
           <LoadingScreen />
           :
           // Rest of the app goes here
-
-          <View style={{ flex: 1, justifyContent: 'center' }}>
-            <IconBlock icon={IconBlockTypes.info} text="Have you ever heard of The Tragedy of Darth Plaguis The Wise? 
-            I thought not. It's not a tale the jedi will tell you" />
-
-            <Link href="/welcome" asChild>
-              <Button title="Welcome" />
-            </Link>
-
-            <Link href="/signin" asChild>
-              <Button title="Sign in" />
-            </Link>
-
-            <Link href="/forgotpassword" asChild>
-              <Button title="forgot password" />
-            </Link>
-
-            <Link href="/createaccount" asChild>
-              <Button title="Create Account" />
-            </Link>
-
-            <Link href="/decor" asChild>
-              <Button title="Decor" />
-            </Link>
-
-            <Link href="/day" asChild>
-              <Button title="Day" />
-            </Link>
-
-            <Link href="/promote" asChild>
-              <Button title="Promote" />
-            </Link>
-
-            <Link href="/test" asChild>
-              <Button title="Test" />
-            </Link>
-
-          </View>
+          <Location />
 
         }
       </View>

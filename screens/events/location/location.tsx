@@ -7,7 +7,6 @@ import { PrimaryButtonTypes } from "../../../utils/advent-types"
 import PrimaryButton from "../../../components/common/PrimaryButton"
 import { textStyles } from "../../../utils/styles/TextStyles"
 import SecondaryButton from "../../../components/common/SecondaryButton"
-import * as ExpoLocation from 'expo-location'
 import Geocode from "../../../utils/geolocation/geocode"
 
 interface LocationChildProps {
@@ -28,17 +27,15 @@ interface DispatchActions {
 }
 
 interface LocationStates {
-    geographic_state: string,
-    city: string,
-    zip: number,
-    latitude: number,
-    longitude: number,
-    latitudeDelta: number,
-    longitudeDelta: number
+    geographic_state: string | null,
+    city: string | null,
+    zip: number | null,
+    latitude: number | null,
+    longitude: number | null,
 }
 
 
-async function reducer(state: LocationStates, action: DispatchActions){
+function reducer(state: LocationStates, action: DispatchActions){
     switch(action.type){
         case Actions.geographic_state:
             return {...state, geographic_state: action.payload}
@@ -48,12 +45,15 @@ async function reducer(state: LocationStates, action: DispatchActions){
             return {...state, zip: action.payload}
         case Actions.display:
             let address = _constructAddress(state)
-            try {
-                let coords = await Geocode(address)
-                return {...state, latitude: coords[0].latitude, longitude: coords[0].longitude}
-            } catch {
-                return {...state}
-            }
+            let coords = new Promise ((resolve, reject) => {
+                let coords: Array<any> = Geocode(address)
+                resolve({...state, latitude: coords[0].latitude, longitude: coords[0].longitude})
+                reject({...state})
+            })
+            return coords.then((res) => {
+                return res
+            })
+            
         default:
             console.error('Invalid input')
     }
@@ -67,22 +67,24 @@ function _constructAddress(state: LocationStates){
 
 
 export default function Location(){
-    const [state, dispatch] = useReducer(reducer, { 
-        geographic_state: "Louisiana", 
-        city: "New Orleans", 
-        zip: 70112,
+    const initialState: LocationStates = { 
+        geographic_state: null, 
+        city: null, 
+        zip: null,
         latitude: 29.959270,
         longitude: -90.071290,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421 });
-
+        }
+    const [state, dispatch] = useReducer(reducer, initialState)
+    //
+    console.log('main function')
     console.log(state)
+    //
     return (
         <>
             <SearchBar />
             <AddressInputBlock state={state} dispatch={dispatch} />
             <MapBlock state={state} dispatch={dispatch} />
-            <PrimaryButton title={PrimaryButtonTypes.save} isPressed={() => {}}/>
+            <PrimaryButton title={PrimaryButtonTypes.save} isPressed={() => {console.log('#TODO: link to another screen')}}/>
         </>
         
     )
@@ -126,8 +128,21 @@ function MapBlock(props: LocationChildProps){
                 longitude: -90.071290,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
-            }}>
-                <Marker coordinate={{latitude: 29.959270, longitude: -90.071290}}/>
+            }}
+            region={{
+                latitude: props.state.latitude, 
+                longitude: props.state.longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421
+            }}
+            >
+                <>
+                {props.state.latitude !== null && props.state.longitude !== null ?
+                    <Marker coordinate={{latitude: props.state.latitude, longitude: props.state.longitude}}/>
+                    :
+                    <></>
+                }
+                </>
             </MapView>
             </View>
         </View>
