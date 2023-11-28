@@ -107,7 +107,7 @@ export default function Page() {
       <View style={{ marginTop: 'auto', width: '80%' }}>
         <PrimaryButton
           title="Continue"
-          isPressed={() => router.push("/")}
+          isPressed={() => router.push("/subscribe")}
         />
       </View>
 
