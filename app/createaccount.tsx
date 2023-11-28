@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform, View, ScrollView, TouchableOpacity, Button } from 'react-native';
 import IconFeather from 'react-native-vector-icons/Feather';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
 
 export default function Page() {
@@ -23,6 +23,8 @@ export default function Page() {
   const togglePasswordVisibility = () => {
     setIsToggled((prev) => !prev);
   }
+
+  const router = useRouter();
 
   return (
 
@@ -108,7 +110,7 @@ export default function Page() {
         <View style={styles.buttonContainer}>
           <PrimaryButton
             title="Sign Up"
-            isPressed={() => alert('Sign In button clicked')}
+            isPressed={() => router.push("/connectsocial")}
           />
         </View>
 
