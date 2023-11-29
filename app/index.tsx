@@ -1,18 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Button, Switch } from 'react-native';
-import { Link } from 'expo-router';
-import Vendors from '../screens/events/vendors/vendors';
-import Location from '../screens/events/location/location';
-import TextField from '../components/common/TextField';
-import { blockStyles } from '../utils/styles/BlockStyles';
+import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 import { useFonts } from 'expo-font'
-import { textStyles } from '../utils/styles/TextStyles';
-import { FontTypes, IconBlockTypes } from '../utils/advent-types';
-import SecondaryButton from '../components/common/SecondaryButton';
-import IconBlock from '../components/common/IconBlock';
-import PrimaryButton from '../components/common/PrimaryButton';
-import Budget from '../screens/events/budget/budget';
-import ServiceFee from '../screens/events/service-fee/ServiceFee';
+import { FontTypes } from '../utils/advent-types';
+import _layout from './_layout';
+import { Link } from 'expo-router';
+import { baseStyles } from '../utils/styles/BaseStyles';
+
 
 
 export default function Page() {
@@ -28,13 +20,53 @@ export default function Page() {
 
   return (
 
-    <SafeAreaView style={styles.container}>
-      <View style={styles.innerView}>
+    <SafeAreaView style={baseStyles.container}>
+      <View style={baseStyles.innerView}>
         {fontsLoaded === false ?
           <LoadingScreen />
           :
           // Rest of the app goes here
-          <Location />
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+          
+
+            <Link href="/welcome" asChild>
+              <Button title="Welcome" />
+            </Link>
+
+            <Link href="/signin" asChild>
+              <Button title="Sign in" />
+            </Link>
+
+            <Link href="/forgotpassword" asChild>
+              <Button title="forgot password" />
+            </Link>
+
+            <Link href="/createaccount" asChild>
+              <Button title="Create Account" />
+            </Link>
+
+            <Link href="/decor" asChild>
+              <Button title="Decor" />
+            </Link>
+
+            <Link href="/day" asChild>
+              <Button title="Day" />
+            </Link>
+
+            <Link href="/promote" asChild>
+              <Button title="Promote" />
+            </Link>
+
+            <Link href="/location" asChild>
+              <Button title="Location" />
+            </Link>
+
+            <Link href="/test" asChild>
+              <Button title="Test" />
+            </Link>
+
+        </View>
+
 
         }
       </View>
@@ -51,15 +83,4 @@ function LoadingScreen() {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#fbfcfe',
-  },
-  innerView: {
-    flex: 1,
-    width: '90%',
-    alignSelf: 'center',
-  }
-});
+

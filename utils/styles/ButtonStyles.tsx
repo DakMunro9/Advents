@@ -13,7 +13,7 @@ export const buttonStyles = StyleSheet.create({
   },
   primaryButtonContainer: {
     position: 'absolute',
-    bottom: Platform.OS === 'ios' ? 0: 15,
+    bottom: 15,
     left: 0,
     right: 0
   },

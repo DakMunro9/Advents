@@ -1,13 +1,14 @@
 import { View, Text, TextInput, StyleSheet, Dimensions } from "react-native"
 import MapView, { Marker } from "react-native-maps"
-import { blockStyles } from "../../../utils/styles/BlockStyles"
-import TextField from "../../../components/common/TextField"
+import { blockStyles } from "../utils/styles/BlockStyles"
+import TextField from "../components/common/TextField"
 import { useReducer } from "react"
-import { PrimaryButtonTypes } from "../../../utils/advent-types"
-import PrimaryButton from "../../../components/common/PrimaryButton"
-import { textStyles } from "../../../utils/styles/TextStyles"
-import SecondaryButton from "../../../components/common/SecondaryButton"
-import Geocode from "../../../utils/geolocation/geocode"
+import { PrimaryButtonTypes } from "../utils/advent-types"
+import PrimaryButton from "../components/common/PrimaryButton"
+import { textStyles } from "../utils/styles/TextStyles"
+import SecondaryButton from "../components/common/SecondaryButton"
+import Geocode from "../utils/geolocation/geocode"
+import { baseStyles } from "../utils/styles/BaseStyles"
 
 interface LocationChildProps {
     state: LocationStates
@@ -80,12 +81,12 @@ export default function Location(){
     console.log(state)
     //
     return (
-        <>
+        <View style={baseStyles.innerView}>
             <SearchBar />
             <AddressInputBlock state={state} dispatch={dispatch} />
             <MapBlock state={state} dispatch={dispatch} />
             <PrimaryButton title={PrimaryButtonTypes.save} isPressed={() => {console.log('#TODO: link to another screen')}}/>
-        </>
+        </View>
         
     )
 }
@@ -111,7 +112,6 @@ function AddressInputBlock(props: LocationChildProps){
                 <TextField defaultText="e.g. New Orleans" currentText={(text) => props.dispatch({type: Actions.city, payload: text})} />
                 <Text>Zip Code</Text>
                 <TextField defaultText="e.g. 70112" currentText={(text) => props.dispatch({type: Actions.zip, payload: text})} keyboard="numeric" />
-                <SecondaryButton title="See Location On Map" isPressed={() => props.dispatch({type: Actions.display, payload: null})} />
             </View>
         </View>
     )

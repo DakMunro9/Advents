@@ -41,6 +41,9 @@ export default function _layout(){
             <Stack.Screen name="promote" options={{
                 title: 'List Your Services'
             }} />
+            <Stack.Screen name="location" options={{
+                title: 'Location'
+            }} />
 
     </Stack>
     )
