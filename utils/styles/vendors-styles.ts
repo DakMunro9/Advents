@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
-const size = 100
+const size = Dimensions.get('window').width * .2
 const margin = 12
 const borderWidth= 7
 
@@ -19,5 +19,9 @@ export const vendorStyles = StyleSheet.create({
         margin: margin,
         borderWidth: borderWidth,
         borderColor: '#0062cc'
+    },
+    list: {
+        alignItems: 'center',
+        marginVertical: 5
     }
 })

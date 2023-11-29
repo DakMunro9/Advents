@@ -89,7 +89,7 @@ function Header(){
 function VendorList(props: VendorListProps){
 
     return (
-        <View style={{height: 325}}>
+        <View style={vendorStyles.list}>
             <FlatList
                 numColumns={3}
                 data={sampleData}

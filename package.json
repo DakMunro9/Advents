@@ -12,7 +12,7 @@
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
     "@react-native-async-storage/async-storage": "1.18.2",
-    "@react-native-picker/picker": "2.4.10",
+    "@react-native-picker/picker": "^2.4.10",
     "@stripe/stripe-react-native": "^0.28.0",
     "expo": "^49.0.16",
     "expo-constants": "~14.4.2",
