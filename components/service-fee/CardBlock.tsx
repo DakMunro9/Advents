@@ -1,7 +1,7 @@
 import { View, Text, Pressable } from 'react-native'
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
-import { serviceStyles } from '../../../../utils/styles/ServiceStyles';
-import { textStyles } from '../../../../utils/styles/TextStyles';
+import { serviceStyles } from '../../utils/styles/ServiceStyles';
+import { textStyles } from '../../utils/styles/TextStyles';
 
 
 interface CardBlockProps {

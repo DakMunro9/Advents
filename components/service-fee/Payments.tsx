@@ -1,7 +1,7 @@
 import { View, Text, Switch} from 'react-native'
-import { serviceStyles, textStyles } from '../../../../utils/export/style-exports'
-import SecondaryButton from '../../../../components/common/SecondaryButton'
-import { SecondaryButtonTypes } from '../../../../utils/advent-types'
+import { serviceStyles, textStyles } from '../../utils/export/style-exports'
+import SecondaryButton from '../common/SecondaryButton'
+import { SecondaryButtonTypes } from '../../utils/advent-types'
 import CardBlock from './CardBlock'
 import { useState } from 'react'
 

@@ -1,6 +1,6 @@
 import { View, Text, Image } from 'react-native'
-import { serviceStyles, textStyles } from '../../../../utils/export/style-exports'
-import { TEST_IMAGES } from '../../../../utils/export/test-images-exports'
+import { serviceStyles, textStyles } from '../../utils/export/style-exports'
+import { TEST_IMAGES } from '../../utils/export/test-images-exports'
 
 //TODO: Image is hardcoded. this will need to be changed down the road
 

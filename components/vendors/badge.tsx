@@ -1,7 +1,7 @@
 import { Pressable, Image, Text, View } from "react-native";
-import { vendorStyles } from "../../../../utils/styles/vendors-styles";
+import { vendorStyles } from "../../utils/styles/vendors-styles";
 import { useState } from "react";
-import { textStyles } from "../../../../utils/styles/TextStyles";
+import { textStyles } from "../../utils/styles/TextStyles";
 
 interface BadgeProps {
     image: any,

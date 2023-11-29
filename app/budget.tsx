@@ -1,20 +1,21 @@
 import { View, TextInput, Text, Keyboard, Pressable, KeyboardAvoidingView, Platform } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
-import { blockStyles } from '../../../utils/styles/BlockStyles';
-import PrimaryButton from '../../../components/common/PrimaryButton';
-import { IconBlockTypes, PrimaryButtonTypes } from '../../../utils/advent-types';
-import { textStyles } from '../../../utils/styles/TextStyles';
-import TextField from '../../../components/common/TextField';
-import { TextFieldStyles } from '../../../utils/styles/TextFieldStyles';
-import IconBlock from '../../../components/common/IconBlock';
+import { blockStyles } from '../utils/styles/BlockStyles';
+import PrimaryButton from '../components/common/PrimaryButton';
+import { IconBlockTypes, PrimaryButtonTypes } from '../utils/advent-types';
+import { textStyles } from '../utils/styles/TextStyles';
+import TextField from '../components/common/TextField';
+import { TextFieldStyles } from '../utils/styles/TextFieldStyles';
+import IconBlock from '../components/common/IconBlock';
 import { useState } from 'react';
+import { baseStyles } from '../utils/styles/BaseStyles';
 
 export default function Budget(){
     //Pressable must fill whole screen or dismiss wont work
     const [budget, setBudget] = useState<number>()
 
     return ( 
-        <>
+        <View style={baseStyles.innerView}>
             <Pressable style={{flex: 1}} onPress={() => {Keyboard.dismiss()}}>
                 <View style={blockStyles.block}>
                     <View style={blockStyles.innerBlock}>
@@ -24,7 +25,7 @@ export default function Budget(){
                 </View>
             </Pressable>
             <PrimaryButton title={PrimaryButtonTypes.checkout} isPressed={() => console.log('#TODO: Implement linking')}/>
-        </>
+        </View>
         
     )
 }
@@ -33,7 +34,7 @@ function BudgetInput({ callback }){
     return(
         <View style={{marginVertical: 7}}>
             <Text style={textStyles.secondaryButtonText}>Budget</Text>
-            <TextField style={TextFieldStyles.singleLineInput} defaultText='100.00USD' keyboard='decimal' currentText={(text) => callback(text)}/>
+            <TextField style={TextFieldStyles.singleLineInput} defaultText='100.00 USD' keyboard='decimal' currentText={(text) => callback(text)}/>
         </View>
     )
 }

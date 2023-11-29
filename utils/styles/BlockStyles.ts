@@ -7,7 +7,7 @@ export const blockStyles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 7,
         paddingVertical: size,
-        marginVertical: size,   
+        marginVertical: size,
     },
     innerBlock: {
         marginHorizontal: 12,
@@ -20,6 +20,7 @@ export const blockStyles = StyleSheet.create({
         width: '6.66%'
     },
     iconBlockText: {
+        flexShrink: 1,
         justifyContent: 'flex-start'
     }
 

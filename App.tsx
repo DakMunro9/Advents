@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Buttonx from './components/common/PrimaryButton';
 import TextField from './components/common/TextField';
 import { useGeolocation } from './utils/export/hook-exports'
-import Vendors from './screens/events/vendors/vendors';
+import Vendors from './app/vendors';
 
 //Debug purposes
 

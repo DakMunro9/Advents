@@ -44,7 +44,15 @@ export default function _layout(){
             <Stack.Screen name="location" options={{
                 title: 'Location'
             }} />
-
+            <Stack.Screen name="budget" options={{
+                title: 'Budget'
+            }} />
+            <Stack.Screen name="servicefee" options={{
+                title: 'Service Fee'
+            }} />
+            <Stack.Screen name="vendors" options={{
+                title: 'Vendors'
+            }} />
     </Stack>
     )
 }

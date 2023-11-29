@@ -1,10 +1,11 @@
 import { View, Text, FlatList } from "react-native";
-import Badge from "./components/badge";
-import { TEST_IMAGES } from '../../../utils/export/test-images-exports'
-import { blockStyles, textStyles, vendorStyles } from '../../../utils/export/style-exports'
-import IconBlock from '../../../components/common/IconBlock'
-import { IconBlockTypes, PrimaryButtonTypes } from "../../../utils/advent-types";
-import PrimaryButton from "../../../components/common/PrimaryButton";
+import Badge from "../components/vendors/badge";
+import { TEST_IMAGES } from '../utils/export/test-images-exports'
+import { blockStyles, textStyles, vendorStyles } from '../utils/export/style-exports'
+import IconBlock from '../components/common/IconBlock'
+import { IconBlockTypes, PrimaryButtonTypes } from "../utils/advent-types";
+import PrimaryButton from "../components/common/PrimaryButton";
+import { baseStyles } from "../utils/styles/BaseStyles";
 
 
 
@@ -61,7 +62,7 @@ export default function Vendors(){
     }
 
     return (
-        <>
+        <View style={baseStyles.innerView}>
             <View style={blockStyles.block}>
                 <View style={blockStyles.innerBlock}>
                     <Header />
@@ -70,7 +71,7 @@ export default function Vendors(){
                 </View>
             </View>
             <PrimaryButton title={PrimaryButtonTypes.continue} isPressed={() => console.log("#TODO: link this to another screen")}/>
-        </>
+        </View>
         
         
     )

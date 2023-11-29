@@ -20,7 +20,7 @@ export default function Page() {
 
   return (
 
-    <SafeAreaView style={baseStyles.container}>
+    <SafeAreaView style={baseStyles.outerView}>
       <View style={baseStyles.innerView}>
         {fontsLoaded === false ?
           <LoadingScreen />
@@ -59,6 +59,18 @@ export default function Page() {
 
             <Link href="/location" asChild>
               <Button title="Location" />
+            </Link>
+
+            <Link href="/budget" asChild>
+              <Button title="Budget" />
+            </Link>
+
+            <Link href="/servicefee" asChild>
+              <Button title="Service Fee" />
+            </Link>
+
+            <Link href="/vendors" asChild>
+              <Button title="Vendors" />
             </Link>
 
             <Link href="/test" asChild>
