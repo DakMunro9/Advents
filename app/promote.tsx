@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, ScrollView, Button } from 'react-native';
-
+import { Picker } from '@react-native-picker/picker';
 import IconFeather from 'react-native-vector-icons/Feather';
 import IconFoundation from 'react-native-vector-icons/Foundation';
 import { Link } from 'expo-router';
