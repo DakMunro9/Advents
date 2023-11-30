@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Image } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import { Link, useRouter } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
+import { TEST_IMAGES } from '../utils/export/test-images-exports'
+import IconFeather from 'react-native-vector-icons/Feather';
+import { useIsFocused } from '@react-navigation/native';
 
 // "Explore upcoming and nearby events"
 const FirstRoute = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-
-    <Text style={{ marginBottom: 100, }}>(image preview here)</Text>
+    <View>
+      <Image
+        source={TEST_IMAGES.LOREM1}
+        style={{
+          width: 300,
+          height: 300,
+          resizeMode: 'contain',
+        }}
+      />
+    </View>
 
     <View>
       <Text style={styles.mainText}>Explore Upcoming and Nearby Events</Text>
@@ -24,7 +35,9 @@ const FirstRoute = () => (
 const SecondRoute = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
 
-    <Text style={{ marginBottom: 100 }}>(icon here)</Text>
+    <View style={{ marginTop: 50, marginBottom: 100, backgroundColor: "black", borderRadius: 100, }}>
+      <IconFeather name="figma" size={100} color="white" />
+    </View>
 
     <View>
       <Text style={styles.mainText}>  The best way to plan your event for any occasion.</Text>
@@ -42,18 +55,24 @@ const renderScene = SceneMap({
 });
 
 const TabbedView = () => {
+  const isFocused = useIsFocused();
   const [index, setIndex] = useState(0);
 
   // This autoscrolls the tabView
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      // Calculate the next index and loop back to the first tab if needed
-      const nextIndex = (index + 1) % routes.length;
-      setIndex(nextIndex);
-    }, 4000); // Adjust the delay (in milliseconds) as needed
+    // only fire useEffect when screen is focused to prevent unwanted behavior on other page in the stack
+    if (isFocused) {
 
-    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
-  }, [index]);
+      const intervalId = setInterval(() => {
+        // Calculate the next index and loop back to the first tab if needed
+        const nextIndex = (index + 1) % routes.length;
+        setIndex(nextIndex);
+      }, 4000); // Adjust the delay (in milliseconds) as needed
+
+      return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+    }
+
+  }, [isFocused, index]);
 
   const [routes] = useState([
     { key: 'first', title: 'First' },
