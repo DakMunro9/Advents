@@ -5,6 +5,8 @@ import { Calendar, CalendarTheme, LocaleConfig } from 'react-native-calendars';
 import Icon from 'react-native-vector-icons/Feather';
 import { Link } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
+import IconBlock from '../components/common/IconBlock';
+import { IconBlockTypes, PrimaryButtonTypes } from '../utils/advent-types';
 
 LocaleConfig.locales['myConfig'] = {
     monthNames: [
@@ -47,9 +49,22 @@ export default function Page() {
     };
 
     const customTheme: CalendarTheme = {
-        textMonthFontSize: 22,
-        textDayFontSize: 20,
-        textDayHeaderFontSize: 18,
+        textMonthFontSize: 30,
+        textDayFontSize: 18,
+        textDayHeaderFontSize: 20,
+        textDayHeaderFontWeight: '300',
+        dayTextColor: '#2d4150',
+        textDayHeaderColor: '#7bd629',
+        textSectionTitleColor: 'black',
+        arrowColor: 'black',
+        'stylesheet.calendar.header': {
+            week: {
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              backgroundColor: '#ffeae8',
+              marginHorizontal: 7,
+            }
+          }
     };
 
     const [selectedDate, setSelectedDate] = useState('');
@@ -67,12 +82,11 @@ export default function Page() {
                 <Calendar
                     style={{
                         borderWidth: 0,
-                        width: 400,
-                        height: 300,
+                        //width: 400,
+                        //height: 300,
                     }}
                     theme={customTheme}
                     minDate={today.toISOString().split('T')[0]} // Sets the minimum selectable date
-                    // Customize calendar props as needed
                     //onDayPress={(day) => console.log('selected day', day)}
                     onDayPress={handleDayPress}
                     markingType={'custom'}
@@ -80,14 +94,14 @@ export default function Page() {
                         [selectedDate]: {
                             customStyles: {
                                 container: {
+                                    
                                     backgroundColor: 'black',
                                     borderRadius: 5,
-                                    marginHorizontal: 20,
-                                    elevation: 2,
                                 },
                                 text: {
                                     color: 'white',
-                                    fontWeight: 'bold'
+                                    //fontWeight: 'bold'
+                                    
                                 }
                             }
                         },
@@ -95,14 +109,13 @@ export default function Page() {
                 />
             </View>
 
-            <View>
-                <View style={styles.textContainer}>
-                    <Icon name="info" size={30} color="gray" />
-                    <Text style={styles.infoText}> These dates are available to you.</Text>
+            <View style={{marginBottom: 80}}>
+                <View style={{ marginHorizontal: 20, marginVertical: 20 }}>
+                    <ExplainerText />
                 </View>
                 <View style={styles.textContainer}>
-                    <Icon name="clock" size={30} color="gray" />
-                    <Text style={styles.infoText}> {daysDifference} day(s) until event.</Text>
+                    <Icon name="clock" size={18} color="gray" />
+                    <Text style={styles.infoText}>  {daysDifference} day(s) until event.</Text>
                 </View>
             </View>
 
@@ -117,35 +130,47 @@ export default function Page() {
     );
 };
 
+function ExplainerText() {
+    return (
+        <IconBlock icon={IconBlockTypes.info} text='These dates are available to you.' />
+    )
+}
+
+function DayCountText() {
+    return (
+        <IconBlock icon={IconBlockTypes.info} text='' />
+    )
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
+        //alignItems: 'center',
         justifyContent: 'space-between',
         padding: 20,
     },
     textContainer: {
         flexDirection: 'row',
-        padding: 16, // Adjust the padding as needed
+        marginLeft: 20,
+        //padding: 16, // Adjust the padding as needed
         //backgroundColor: 'white', // Optional background color for the padding area
     },
     infoText: {
         fontSize: 18,
         fontWeight: 'bold',
-        justifyContent: 'flex-start',
+        //justifyContent: 'flex-start',
         color: 'gray',
     },
     calendarWrapper: {
         marginTop: 50,
         //height: '50%',
-        //width: '90%',
+        width: '100%',
     },
     buttonContainer: {
         marginBottom: 10, // Adjust as needed for spacing
         //marginRight: 30,
         //marginLeft: 30,
-        height: 50,
-        width: '90%',
+        width: '100%',
     },
 });
