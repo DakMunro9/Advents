@@ -4,6 +4,7 @@ import { FontTypes } from '../utils/advent-types';
 import _layout from './_layout';
 import { Link } from 'expo-router';
 import { baseStyles } from '../utils/styles/BaseStyles';
+import LoadingScreen from '../components/common/Loading';
 
 
 
@@ -87,12 +88,6 @@ export default function Page() {
   );
 }
 
-function LoadingScreen() {
-  return (
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Loading...</Text>
-    </View>
-  )
-}
+
 
 
