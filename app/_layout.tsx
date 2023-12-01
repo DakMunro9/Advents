@@ -29,6 +29,9 @@ export default function _layout(){
             <Stack.Screen name="connectsocial" options={{
                 title: ''
             }} />
+            <Stack.Screen name="connectsocial2" options={{
+                title: ''
+            }} />
             <Stack.Screen name="subscribe" options={{
                 title: ''
             }} />
