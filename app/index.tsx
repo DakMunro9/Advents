@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 import { useFonts } from 'expo-font'
-import { FontTypes } from '../utils/advent-types';
+import { FontTypes, StaticChipTypes } from '../utils/advent-types';
 import _layout from './_layout';
 import { Link } from 'expo-router';
 import { baseStyles } from '../utils/styles/BaseStyles';
 import LoadingScreen from '../components/common/Loading';
+import StaticChip from '../components/common/Chip';
 
 
 
@@ -28,8 +29,8 @@ export default function Page() {
           :
           // Rest of the app goes here
           <View style={{ flex: 1, justifyContent: 'center' }}>
-          
-
+            
+            
             <Link href="/welcome" asChild>
               <Button title="Welcome" />
             </Link>

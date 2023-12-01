@@ -51,4 +51,9 @@ enum IconBlockTypes {
     clock
 }
 
-export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes }
+enum StaticChipTypes {
+    calendar,
+    map_marker
+}
+
+export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes, StaticChipTypes }

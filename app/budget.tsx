@@ -2,13 +2,14 @@ import { View, TextInput, Text, Keyboard, Pressable, KeyboardAvoidingView, Platf
 import { Ionicons } from '@expo/vector-icons';
 import { blockStyles } from '../utils/styles/BlockStyles';
 import PrimaryButton from '../components/common/PrimaryButton';
-import { IconBlockTypes, PrimaryButtonTypes } from '../utils/advent-types';
+import { IconBlockTypes, PrimaryButtonTypes, StaticChipTypes } from '../utils/advent-types';
 import { textStyles } from '../utils/styles/TextStyles';
 import TextField from '../components/common/TextField';
 import { TextFieldStyles } from '../utils/styles/TextFieldStyles';
 import IconBlock from '../components/common/IconBlock';
 import { useState } from 'react';
 import { baseStyles } from '../utils/styles/BaseStyles';
+import StaticChip from '../components/common/Chip';
 
 export default function Budget(){
     //Pressable must fill whole screen or dismiss wont work
@@ -21,6 +22,7 @@ export default function Budget(){
                     <View style={blockStyles.innerBlock}>
                         <BudgetInput callback={(budget: number) => setBudget(budget)}/>
                         <ExplainerText />
+                        <StaticChip icon={StaticChipTypes.map_marker} text="Hello" />
                     </View>
                 </View>
             </Pressable>

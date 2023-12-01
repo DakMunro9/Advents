@@ -90,12 +90,18 @@ export default function Location(){
     useEffect(() => {
         
             if(state.pending === true){
-                let address = _constructAddress(state)
-                let promise = new Promise((resolve, reject) => {
-                let coords = ExpoLocation.geocodeAsync(address)
-                resolve(coords)
-                Promise.all([promise]).then((res) => {dispatch({type: Actions.coords, payload: [res[0].latitude, res[0].longitude]})})
-                })    
+                let address = _constructAddress(state)    
+                ExpoLocation.geocodeAsync(address)
+                    .then(res => dispatch({type: Actions.coords, payload: [res[0].latitude, res[0].longitude]}))
+                    .catch(e => dispatch({type: Actions.coords, payload: [state.latitude, state.longitude]}))
+                    
+                
+                
+                
+                
+                
+                
+                
             }
         
         
@@ -134,7 +140,6 @@ function SearchBar(){
 }
 
 function AddressInputBlock(props: LocationChildProps){
-
     return(
         <View style={blockStyles.block}>
             <View style={blockStyles.innerBlock}>
