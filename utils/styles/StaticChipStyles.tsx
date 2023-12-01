@@ -8,8 +8,6 @@ export const staticChipStyles = StyleSheet.create({
         borderRadius: 7,
         flexDirection: 'row',
         margin: 3,
-        minWidth: 50,
-        maxWidth: 200
     },
     text: {
         marginLeft: 7,

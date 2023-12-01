@@ -7,13 +7,14 @@ import { Feather } from '@expo/vector-icons';
 
 interface StaticChipProps {
     icon: StaticChipTypes,
-    text: string
+    text: string,
+    width: number
 }
 
 export default function StaticChip(props: StaticChipProps){
 
     return (
-        <View style={staticChipStyles.container}>
+        <View style={[staticChipStyles.container, {width: props.width}]}>
             <>
             {
                 props.icon === StaticChipTypes.calendar ?

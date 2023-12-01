@@ -22,7 +22,6 @@ export default function Budget(){
                     <View style={blockStyles.innerBlock}>
                         <BudgetInput callback={(budget: number) => setBudget(budget)}/>
                         <ExplainerText />
-                        <StaticChip icon={StaticChipTypes.map_marker} text="Hello" />
                     </View>
                 </View>
             </Pressable>
