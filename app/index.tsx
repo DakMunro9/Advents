@@ -73,6 +73,10 @@ export default function Page() {
               <Button title="Vendors" />
             </Link>
 
+            <Link href="/splash" asChild>
+              <Button title="Splash" />
+            </Link>
+
             <Link href="/test" asChild>
               <Button title="Test" />
             </Link>
