@@ -18,9 +18,9 @@ export default function StaticChip(props: StaticChipProps){
             <>
             {
                 props.icon === StaticChipTypes.calendar ?
-                <AntDesign name="calendar" size={24} color="black" />
+                <AntDesign name="calendar" size={18} color="black" />
                 :
-                <Feather name="map-pin" size={24} color="black" />
+                <Feather name="map-pin" size={18} color="black" />
             }
             </>
             <View style={staticChipStyles.text}>

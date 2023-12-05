@@ -53,6 +53,9 @@ export default function _layout(){
             <Stack.Screen name="vendors" options={{
                 title: 'Vendors'
             }} />
+            <Stack.Screen name="search" options={{
+                title: 'Search'
+            }} />
     </Stack>
     )
 }

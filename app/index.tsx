@@ -75,9 +75,11 @@ export default function Page() {
               <Button title="Vendors" />
             </Link>
 
-            <Link href="/test" asChild>
-              <Button title="Test" />
+            <Link href="/search" asChild>
+              <Button title="Search Events" />
             </Link>
+
+            
 
         </View>
 

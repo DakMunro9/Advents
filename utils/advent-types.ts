@@ -56,4 +56,9 @@ enum StaticChipTypes {
     map_marker
 }
 
-export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes, StaticChipTypes }
+enum SearchButtonTypes {
+    join = 'Join',
+    details = 'See Details'
+}
+
+export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes, StaticChipTypes, SearchButtonTypes }
