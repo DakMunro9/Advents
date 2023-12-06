@@ -126,11 +126,10 @@ If you wanted to add more icons, you would do it as so:
 
 A chip is a component that has an icon and a small amount of text in a self contained box. Check the location and date markers on this screen for reference: https://www.figma.com/file/7MJeb71VIuG0GqMT4UNAmU/adventsapp?type=design&node-id=62-3629&mode=design&t=AN1qJksETeM7veYx-0
 
-It has 3 required parameters
+It has 2 required parameters
 
 1. Icon: StaticChipTypes. Select which icon you want. As always if you add more icons be sure to add a new descriptor to this enum
 2. Text: string. The text you want to display
-3. Width: number. I couldn't get it to dynamically resize based on it's internal contents, so for now you gotta define the size
 
 As with Icon blocks, if you want to add more icons do the same thing for the StaticChip.tsx file
 

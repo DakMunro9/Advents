@@ -4,7 +4,7 @@ export const staticChipStyles = StyleSheet.create({
     container: {
         borderColor: '#e6e7e8',
         borderWidth: 2,
-        padding: 3,
+        padding: 5,
         borderRadius: 7,
         flexDirection: 'row',
         margin: 3,

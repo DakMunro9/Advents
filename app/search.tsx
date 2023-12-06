@@ -9,6 +9,8 @@ import { View, Text } from "react-native"
 import { baseStyles } from "../utils/styles/BaseStyles"
 import { textStyles } from "../utils/styles/TextStyles"
 import SecondaryButton from "../components/common/SecondaryButton"
+import CompactEventBlock from "../components/search/CompactEventBlock"
+import { blockStyles } from "../utils/styles/BlockStyles"
 
 
 
@@ -17,11 +19,21 @@ export default function Search(){
     return (
         <View style={baseStyles.outerView}>
             <View style={baseStyles.innerView}>
-                <View style={{marginTop: 10}}>
-                    <TextField defaultText="Search for events..." currentText={(text) => console.log(text)}/>
+                <View style={blockStyles.block}>
+                    <View style={blockStyles.innerBlock}>
+                        <TextField defaultText="Search for events..." currentText={(text) => console.log(text)}/>
+                        <SectionHeader isPressed={() => console.log('clicked')}/>
+                    </View>
+                    
                 </View>
-                <SectionHeader isPressed={() => console.log('clicked')}/>
                 <ScrollView>
+                    <CompactEventBlock 
+                    image={TEST_IMAGES.LOREM5}
+                    title="Event 1"
+                    starttime="9:00AM"
+                    endtime="5:00PM"
+                    location="Montréal, QC"
+                    />
                     <EventBlock 
                     image={TEST_IMAGES.LOREM1}
                     title="Sample Title"

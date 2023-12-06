@@ -43,8 +43,15 @@ export const searchStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around'
     },
-    
-    
-    
+})
 
+export const compactStyles = StyleSheet.create({
+    image: {
+        height: 75,
+        width: 75
+    },
+    infoContainer: {
+        alignItems: 'flex-start',
+        marginLeft: 10
+    }
 })

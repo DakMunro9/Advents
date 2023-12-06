@@ -7,8 +7,7 @@ import { Feather } from '@expo/vector-icons';
 
 interface StaticChipProps {
     icon: StaticChipTypes,
-    text: string,
-    width: number
+    text: string
 }
 
 export default function StaticChip(props: StaticChipProps){
