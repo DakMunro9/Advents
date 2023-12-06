@@ -5,8 +5,6 @@ import _layout from './_layout';
 import { Link } from 'expo-router';
 import { baseStyles } from '../utils/styles/BaseStyles';
 
-
-
 export default function Page() {
   const [fontsLoaded] = useFonts({
     [FontTypes.jakarta_semibold]: require('../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf'),
@@ -79,6 +77,10 @@ export default function Page() {
 
             <Link href="/test" asChild>
               <Button title="Test" />
+            </Link>
+
+            <Link href="/NLP" asChild>
+              <Button title="NLP" />
             </Link>
 
         </View>
