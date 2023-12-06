@@ -27,7 +27,7 @@ export default function Search(){
                     title="Sample Title"
                     subtitle="Sample subtitle"
                     date="07/23/22"
-                    location="Philadelphia, PA"
+                    location="Phila, PA"
                     tickets={500}
                     />
                     <EventBlock 
@@ -35,7 +35,7 @@ export default function Search(){
                     title="Sample Title"
                     subtitle="Sample subtitle"
                     date="07/23/22"
-                    location="Philadelphia, PA"
+                    location="Phila, PA"
                     tickets={9000}
                     />
                 </ScrollView>

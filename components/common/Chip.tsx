@@ -14,7 +14,7 @@ interface StaticChipProps {
 export default function StaticChip(props: StaticChipProps){
 
     return (
-        <View style={[staticChipStyles.container, {width: props.width}]}>
+        <View style={staticChipStyles.container}>
             <>
             {
                 props.icon === StaticChipTypes.calendar ?
