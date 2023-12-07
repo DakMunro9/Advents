@@ -83,6 +83,10 @@ export default function Page() {
               <Button title="NLP" />
             </Link>
 
+            <Link href="/voice" asChild>
+              <Button title="Voice" />
+            </Link>
+
         </View>
 
 

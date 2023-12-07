@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Link } from 'expo-router';
-const { NlpManager } = require('node-nlp-rn');
 
 export default function Page() {
 

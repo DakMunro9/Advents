@@ -25,7 +25,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.advents"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,6 +40,13 @@
         "expo-image-picker",
         {
           "photosPermission": "The app accesses your photos to let you set a profile picture."
+        }
+      ],
+      [
+        "@react-native-voice/voice",
+        {
+          "microphonePermission": "Allow access to the microphone to record.",
+          "speechRecognitionPermission": "Allow voice to text to translate speech."
         }
       ]
     ]
