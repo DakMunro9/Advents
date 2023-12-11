@@ -19,13 +19,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.foxxybb.myapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.foxxybb.myapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,6 +43,14 @@
           "photosPermission": "The app accesses your photos to let you set a profile picture."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "70787bdd-40cf-4c6c-a319-f8e970b34d79"
+      }
+    }
   }
 }
