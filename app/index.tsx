@@ -78,6 +78,17 @@ export default function Page() {
             <Link href="/search" asChild>
               <Button title="Search Events" />
             </Link>
+            <Link href="/splash" asChild>
+              <Button title="Splash" />
+            </Link>
+
+            <Link href="/test" asChild>
+              <Button title="Test" />
+            </Link>
+
+            <Link href="/openai-test" asChild>
+              <Button title="Chat Test" />
+            </Link>
 
             
 

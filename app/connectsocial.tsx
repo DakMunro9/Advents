@@ -11,6 +11,10 @@ export default function Page() {
 
   const router = useRouter();
 
+  const handleButtonPress = () => {
+    router.push("/connectsocial2")
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center', }}>
 
@@ -20,7 +24,7 @@ export default function Page() {
       </View>
 
       {/* Facebook button */}
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity onPress={handleButtonPress} style={styles.socialButton}>
         <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 20 }}>
 
           <IconFontAwesome name="facebook-official" size={30} color="black" />
@@ -37,7 +41,7 @@ export default function Page() {
       </TouchableOpacity>
 
       {/* Instagram button */}
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity onPress={handleButtonPress} style={styles.socialButton}>
         <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 20 }}>
 
           <IconFontAwesome name="instagram" size={30} color="black" />
@@ -54,7 +58,7 @@ export default function Page() {
       </TouchableOpacity>
 
       {/* Twitter button */}
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity onPress={handleButtonPress} style={styles.socialButton}>
         <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 20 }}>
 
           <IconFontAwesome name="twitter" size={30} color="black" />
@@ -71,7 +75,7 @@ export default function Page() {
       </TouchableOpacity>
 
       {/* Tiktok button */}
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity onPress={handleButtonPress} style={styles.socialButton}>
         <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 20 }}>
 
           <Ionicons name="musical-note" size={30} color="black" />
@@ -88,7 +92,7 @@ export default function Page() {
       </TouchableOpacity>
 
       {/* Pinterest button */}
-      <TouchableOpacity style={styles.socialButton}>
+      <TouchableOpacity onPress={handleButtonPress} style={styles.socialButton}>
         <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 20 }}>
 
           <IconFontAwesome name="pinterest" size={30} color="black" />

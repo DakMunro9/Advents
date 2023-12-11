@@ -1,12 +1,72 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform, View, ScrollView, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, KeyboardAvoidingView, Platform, View, ScrollView, TouchableOpacity, Button, Image, ImageBackground, Modal } from 'react-native';
 import IconFeather from 'react-native-vector-icons/Feather';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Link, useRouter } from 'expo-router';
 import PrimaryButton from '../components/common/PrimaryButton';
+import * as ImagePicker from 'expo-image-picker';
 
 export default function Page() {
 
+  {/* MODAL */}
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  {/* IMAGE PICKER */}
+  const [image, setImage] = useState(null);
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      //setImage(result.assets[0].uri);
+      await saveImage(result.assets[0].uri);
+    }
+  };
+
+  {/* CAMERA */}
+  const uploadImage = async () => {
+    try {
+      await ImagePicker.requestCameraPermissionsAsync();
+      let result = await ImagePicker.launchCameraAsync({
+        cameraType: ImagePicker.CameraType.front,
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 1,
+      });
+
+      if (!result.canceled){
+        // save image
+        await saveImage(result.assets[0].uri);
+      }
+
+    } catch (error) {
+      alert("Error uploading image: " + error.message);
+    }
+  };
+
+  const saveImage = async (image) => {
+    try {
+      // update displayed image
+        setImage(image);
+        setModalVisible(false);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  {/* TEXT INPUT */}
   const [selectedInput, setSelectedInput] = useState(null);
 
   const handleFocus = (inputId) => {
@@ -44,9 +104,21 @@ export default function Page() {
         <ScrollView>
 
           <View style={{ alignItems: 'center' }}>
-            <TouchableOpacity style={{ borderWidth: 2, borderRadius: 5, width: 100, height: 100, }}>
-              <View style={{ marginLeft: 65, marginTop: 67 }}>
-                <IconFontAwesome name="camera" size={30} color="black" />
+            <TouchableOpacity style={{ width: 100, height: 100, backgroundColor: 'lightgray', borderRadius: 5 }} onPress={toggleModal}>
+
+              {image && <ImageBackground
+                source={{ uri: image }}
+                style={{ width: 100, height: 100, borderColor: 'black', borderRadius: 5 }}
+                resizeMode="cover"
+                imageStyle={styles.imageStyle}
+              />}
+
+              <View style={{ position: 'absolute', width: 25, height: 25, right: 1, bottom: 1, borderRadius: 50, backgroundColor: 'white' }}>
+                {/* White background for camera icon */}
+              </View>
+
+              <View style={{ position: 'absolute', right: 3.5, bottom: 4 }}>
+                <IconFontAwesome name="camera" size={18} color="black" />
               </View>
 
             </TouchableOpacity>
@@ -148,6 +220,51 @@ export default function Page() {
         </View>
 
       </View>
+      
+      {/* MODAL */}
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={isModalVisible}
+        onRequestClose={toggleModal}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <View style={{flexDirection:'row'}}>
+
+              <View style={{alignItems: 'center'}}>
+                <TouchableOpacity style={{marginTop: 30, width: 60, height: 60, backgroundColor: 'black', borderRadius: 10, marginHorizontal: 30}}
+                onPress={uploadImage}
+                >
+                  <View style={{alignItems: 'center', top: 15}}>
+                    <IconFontAwesome name="camera" size={30} color="white" />
+                  </View>
+                  
+                </TouchableOpacity>
+                <Text>Camera</Text>
+              </View>
+
+              <View style={{alignItems: 'center'}}>
+                <TouchableOpacity style={{marginTop: 30, width: 60, height: 60, backgroundColor: 'black', borderRadius: 10, marginHorizontal: 30}}
+                onPress={pickImage}
+                >
+                  <View style={{alignItems: 'center', top: 15}}>
+                    <IconFontAwesome name="image" size={30} color="white" />
+                  </View>
+                  
+                </TouchableOpacity>
+                <Text>Gallery</Text>
+              </View>
+
+            </View>
+
+            <TouchableOpacity onPress={toggleModal}>
+              <Text style={styles.buttonText}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
     </KeyboardAvoidingView>
   );
 }
@@ -204,5 +321,32 @@ const styles = StyleSheet.create({
   linkText: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  image: {
+    width: 100,
+    height: 100,
+  },
+  imageStyle: {
+    borderRadius: 5,
+    overflow: 'hidden', // this is important for clipping
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'black',
+    fontWeight: 'bold',
+    marginTop: 20,
+    textAlign: 'right'
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    elevation: 5,
   },
 });

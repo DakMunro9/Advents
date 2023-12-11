@@ -14,11 +14,16 @@ export default function _layout(){
             <Stack.Screen name="index" options={{
                 title: 'Home'
             }} />
+            <Stack.Screen name="splash" options={{
+                title: '',
+                headerShown: false,
+            }} />
             <Stack.Screen name="welcome" options={{
-                title: ''
+                title: '',
+                headerShown: false,
             }} />
             <Stack.Screen name="signin" options={{
-                title: ''
+                title: '',
             }} />
             <Stack.Screen name="forgotpassword" options={{
                 title: ''
@@ -27,6 +32,9 @@ export default function _layout(){
                 title: ''
             }} />
             <Stack.Screen name="connectsocial" options={{
+                title: ''
+            }} />
+            <Stack.Screen name="connectsocial2" options={{
                 title: ''
             }} />
             <Stack.Screen name="subscribe" options={{
@@ -55,6 +63,9 @@ export default function _layout(){
             }} />
             <Stack.Screen name="search" options={{
                 title: 'Search'
+            }} />
+            <Stack.Screen name="openai-test" options={{
+                title: 'Chatbot Test'
             }} />
     </Stack>
     )
