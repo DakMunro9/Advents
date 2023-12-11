@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.foxxybb.myapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,7 @@
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.anonymous.advents"
+      "package": "com.foxxybb.myapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -49,6 +50,14 @@
           "speechRecognitionPermission": "Allow voice to text to translate speech."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "70787bdd-40cf-4c6c-a319-f8e970b34d79"
+      }
+    }
   }
 }
