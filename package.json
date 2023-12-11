@@ -41,7 +41,6 @@
     "react-native-vector-icons": "^10.0.2",
     "react-native-voice": "^0.3.0",
     "react-native-web": "~0.19.6",
-    "expo-image-picker": "~14.3.2",
     "expo-dev-client": "~2.4.12"
   },
   "devDependencies": {
