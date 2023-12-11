@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
-import Voice from '@react-native-voice/voice';
+import Voice from '@react-native-community/voice';
 
 const Page = () => {
   const [result, setResult] = React.useState('');
@@ -34,7 +34,6 @@ const Page = () => {
     } catch (err) { 
       setError(err);
     }
-    
   }
 
   return (
