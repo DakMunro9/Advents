@@ -77,7 +77,7 @@ export default function Page() {
               <Button title="Splash" />
             </Link>
 
-            <Link href="/voice" asChild>
+            <Link href="/voice2" asChild>
               <Button title="Voice" />
             </Link>
 
