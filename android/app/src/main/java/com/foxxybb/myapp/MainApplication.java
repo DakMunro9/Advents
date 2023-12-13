@@ -13,12 +13,12 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 
-import com.wenkesj.voice.VoicePackage;
-
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
 
 import java.util.List;
+
+import com.wenkesj.voice.VoicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -30,15 +30,11 @@ public class MainApplication extends Application implements ReactApplication {
       }
 
       @Override
-      protected List<ReactPackage> getPackages() {
-        @SuppressWarnings("UnnecessaryLocalVariable")
-        List<ReactPackage> packages = new PackageList(this).getPackages();
-        // Packages that cannot be autolinked yet can be added manually here, for example:
-        // packages.add(new MyReactNativePackage());
-        packages.add(new VoicePackage());
-        
-        return packages;
-      }
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new VoicePackage() // <------ Add this!
+        );
+    }
 
       @Override
       protected String getJSMainModuleName() {
