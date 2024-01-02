@@ -176,3 +176,11 @@ https://reactnavigation.org/docs/tab-view/
 
 https://docs.expo.dev/versions/latest/sdk/stripe/
 https://stripe.dev/stripe-react-native/api-reference/index.html
+
+# Troubleshooting
+
+## Build Request Failed
+
+With the addition of a development build it may be weird and wonky running emulators on different machines. If this is happeniong to you hit "s" to switch builds from dev build to Expo Go, and follow the info on this link. You have to delete a portion of app.json
+
+https://github.com/expo/eas-cli/issues/694

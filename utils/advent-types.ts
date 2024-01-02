@@ -61,4 +61,11 @@ enum SearchButtonTypes {
     details = 'See Details'
 }
 
-export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes, StaticChipTypes, SearchButtonTypes }
+enum BadgeShapeTypes {
+    square,
+    circular_large,
+    circular_regular,
+    circular_mini
+}
+
+export { Measurements, AsyncKeys, PrimaryButtonTypes, SecondaryButtonTypes, FontTypes, IconBlockTypes, StaticChipTypes, SearchButtonTypes, BadgeShapeTypes }

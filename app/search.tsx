@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native-gesture-handler"
-import EventBlock from "../components/search/EventBlock"
+// import EventBlock from "../components/search/EventBlock"
 import MiniBadge from "../components/search/MiniBadge"
 import SearchButton from "../components/search/SearchButton"
 import { SearchButtonTypes } from "../utils/advent-types"
